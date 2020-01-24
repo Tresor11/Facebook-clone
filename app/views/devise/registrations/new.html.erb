@@ -1,7 +1,30 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="col-6 m-auto">
+  <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name%>
+  </div>
+
+      <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name%>
+  </div>
+
+      <div class="field">
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name%>
+  </div>
+
+      <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender%>
+  </div>
+  
 
   <div class="field">
     <%= f.label :email %><br />
@@ -27,3 +50,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>
