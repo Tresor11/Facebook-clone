@@ -11,12 +11,7 @@
 
   <body>
   <%= render  "shared/nav_bar" %>
-  <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <%= render "shared/flash" %>
     <%= yield %>
   </body>
 </html>

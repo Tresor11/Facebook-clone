@@ -1,2 +1,4 @@
-<h1> welcome</h1>
-<p> <%=current_user.user_name%> </p>
+<h1>
+  <%= gravatar_for current_user %>
+  <%= current_user.user_name %>
+</h1>

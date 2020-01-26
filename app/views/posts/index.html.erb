@@ -3,9 +3,9 @@
 <div class="col-4 m-auto">
 <%= render  "shared/new_post" %>
 </div>
-<div class="col-8 m-auto post-list">
+<div class="col-4 m-auto post-list">
 <%@posts.each do |post|%>
-<div class="post text-center">
+<div class="post ">
 <p class="creator text-left"> Posted by<%=post.creator.user_name%></p>
 <p><%=post.content%></p>
 </div>

@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[email password password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[email password password_confirmation first_name last_name gender user_name])
   end
 
   def after_sign_in_path_for(_resource)
-    current_user
+    posts_url
   end
 end
