@@ -1,6 +1,7 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-6 m-auto">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -19,8 +20,10 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in",class: "btn btn-success" %><span> dont have an acount?<span>
+      <%= link_to  "Signup",new_user_registration_path,class: "btn btn-primary"%>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+  </div>
+</div>
+</div>

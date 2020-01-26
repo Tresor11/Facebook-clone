@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-6 m-auto">
+  <div class=people>
+      <%@users.each do |user|%>
+      <div class="grav-img">
+      <%= gravatar_for user%>
+      </div>
+      <div>
+        <p>First_name: <%= current_user.first_name %></p>
+        <p>Last_name: <%= current_user.last_name %></p>
+        <p>Email: <%= current_user.email%></p>
+        <p>Gender: <%= current_user.gender%></p>
+    <button type="button" class="btn btn-success">add <%=user.user_name%> as a friend</button>
+      </div>
+      <%end%>
+      </div>
+  </div>
+  </div>
+</div>

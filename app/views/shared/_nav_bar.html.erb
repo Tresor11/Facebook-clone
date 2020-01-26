@@ -1,25 +1,29 @@
 <%if user_signed_in?%>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+    <span class="img-tag">
+    <%= gravatar_for current_user%>
+    </span>
+      <a class="navbar-brand" href="#">Facebook</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
+          <%= link_to  "Posts",posts_path,class:"nav-link"%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+          <%= link_to  "Peoples", users_path ,class:"nav-link"%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+          <%= link_to  "Notification",current_user,class:"nav-link"%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+          <%= link_to  "Profile", current_user ,class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+          <%= link_to  "Logout", destroy_user_session_path ,method: :delete ,class:"nav-link"%>
           </li>
         </ul>
       </div>

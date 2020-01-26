@@ -1,7 +1,8 @@
+<div class="container-fluid">
 <div class="row">
 <div class="col-6 m-auto">
 <div class="signup-form">
-  <h2>Create an Account</h2>
+  <h2>Join facebook </h2>
   <h6>It's quick and easy.</h6>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -48,9 +49,11 @@
       </div>
     </fieldset>
     <div class="form-group">
-      <%= f.submit "Sign up", class: 'btn btn-success signup-button' %>
+      <%= f.submit "Sign up", class: 'btn btn-success signup-button' %> <span> have an acount?<span>
+      <%= link_to  "Login",new_user_session_path,class: "btn btn-primary"%>
     </div>
   <% end %>
+</div>
 </div>
 </div>
 </div>

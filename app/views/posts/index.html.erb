@@ -1,12 +1,13 @@
-<div class="container">
+<div class="container-fluid posts">
 <div class="row">
-<div class="col-4 m-auto">
+<div class="col-3 ">
 <%= render  "shared/new_post" %>
 </div>
-<div class="col-4 m-auto post-list">
+<div class="col-5 post-list">
+<div class="count text-center"> Recent posts <%=my_posts.count%></div>
 <%@posts.each do |post|%>
-<div class="post ">
-<p class="creator text-left"> Posted by<%=post.creator.user_name%></p>
+<div class="post specific">
+<p class="creator text-left"> Posted by @ <%=post.creator.user_name%></p>
 <p><%=post.content%></p>
 </div>
 <%end%>
