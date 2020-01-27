@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @new_post = current_user.posts.build
-    @comment=current_user.comments.build
-    @like=current_user.likes.build
+    @comment = current_user.comments.build
+    @like = current_user.likes.build
   end
 
   def new
@@ -28,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content,:creator_id)
+    params.require(:post).permit(:content, :creator_id)
   end
 end
