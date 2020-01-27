@@ -18772,3 +18772,257 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 57ms (Views: 48.8ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/users" for 127.0.0.1 at 2020-01-27 15:04:14 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (32.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 190ms (ActiveRecord: 101.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-27 15:04:18 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered shared/_nav_bar.html.erb (1.4ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 732ms (Views: 713.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-01-27 17:39:24 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 352ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-27 17:39:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (170.8ms)
+  Rendered shared/_nav_bar.html.erb (2.1ms)
+  Rendered shared/_flash.html.erb (1.8ms)
+Completed 200 OK in 1232ms (Views: 1228.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-01-27 17:40:26 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YpacKg4xS39F2MXg/WUAhrcK/ZaDorC5AiE1u17ybUhfek88hpQBPzJtt6/VsL54FQd3Mld2Joi3o4Ky3+TI9A==", "user"=>{"email"=>"tresor.moise2001@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (74.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tresor.moise2001@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 815ms (ActiveRecord: 74.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YpacKg4xS39F2MXg/WUAhrcK/ZaDorC5AiE1u17ybUhfek88hpQBPzJtt6/VsL54FQd3Mld2Joi3o4Ky3+TI9A==", "user"=>{"email"=>"tresor.moise2001@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (9.3ms)
+  Rendered shared/_nav_bar.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (1.5ms)
+Completed 200 OK in 467ms (Views: 146.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-01-27 17:40:36 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UEmGYpCTEPkQci3mwiXOfC5L9l7fTLsUEh1Cvp+5n8FtpVV0GDZauWfHX6nq8HCCjEZ8+guYLSWnn/W3Hq86fQ==", "user"=>{"email"=>"tresor.moise2001@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tresor.moise2001@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 76ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UEmGYpCTEPkQci3mwiXOfC5L9l7fTLsUEh1Cvp+5n8FtpVV0GDZauWfHX6nq8HCCjEZ8+guYLSWnn/W3Hq86fQ==", "user"=>{"email"=>"tresor.moise2001@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (7.9ms)
+  Rendered shared/_nav_bar.html.erb (1.4ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+Completed 200 OK in 330ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-01-27 17:41:27 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (46.1ms)
+  Rendered shared/_nav_bar.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+Completed 200 OK in 161ms (Views: 145.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-01-27 17:41:47 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BwLvydPumd4uCm3wAhcqPIk0CzsEdSGiTy405NbKr9Kb2uhP94gvnaryrLar11ku/VoDzWQLKsU7QqXZ1KmRqw==", "user"=>{"first_name"=>"Tresor", "last_name"=>"bireke", "user_name"=>"Tresor11", "email"=>"tresor.moise2001@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"male"}, "commit"=>"Sign up"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tresor.moise2001@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (82.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "user_name", "gender") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "tresor.moise2001@gmail.com"], ["encrypted_password", "$2a$11$aPAP/iEt5PgcbjZHd.WfbeOcLxpm52kMZN0lmDJUjMaQ1fnqSNnvS"], ["created_at", "2020-01-27 15:41:47.350908"], ["updated_at", "2020-01-27 15:41:47.350908"], ["first_name", "Tresor"], ["last_name", "bireke"], ["user_name", "Tresor11"], ["gender", "male"]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (19.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 469ms (ActiveRecord: 104.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 17:41:47 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (2.4ms)
+  [1m[35m (23.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (48.9ms)
+  Rendered shared/_nav_bar.html.erb (8.1ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 355ms (Views: 114.6ms | ActiveRecord: 67.7ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2020-01-27 17:41:58 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."creator_id" = $1[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."creator_id" = $1 ORDER BY "posts"."created_at" DESC[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (45.1ms)
+  Rendered shared/_nav_bar.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 412ms (Views: 280.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-01-27 17:42:05 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+  Rendered shared/_nav_bar.html.erb (1.9ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 1473ms (Views: 1440.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2020-01-27 17:42:18 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."creator_id" = $1[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."creator_id" = $1 ORDER BY "posts"."created_at" DESC[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (7.1ms)
+  Rendered shared/_nav_bar.html.erb (2.3ms)
+  Rendered shared/_flash.html.erb (1.2ms)
+Completed 200 OK in 107ms (Views: 98.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2020-01-27 17:42:25 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."creator_id" = $1[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."creator_id" = $1 ORDER BY "posts"."created_at" DESC[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+  Rendered shared/_nav_bar.html.erb (4.2ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 96ms (Views: 85.0ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-01-27 17:42:26 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bqOFdUPupoIS9XJJc64NNvZSSaeaYXbsjm7X6iNV7jJTT1Zjy0vswmVAAAZbe7PIVF/DA0614N077GDjokNLjg=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-27 17:42:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (7.9ms)
+  Rendered shared/_nav_bar.html.erb (2.3ms)
+  Rendered shared/_flash.html.erb (1.2ms)
+Completed 200 OK in 89ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-01-27 17:43:37 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MU7TGVZsNJsDYZE812eylSS2hUKh643Q6nxYBdcNSYN+/vtRUPRKIRwFGetrLtKdHseKEnNdvDf8iUK7OSRBXA==", "user"=>{"email"=>"tresor.moise2001@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tresor.moise2001@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 283ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 17:43:38 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (7.5ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (14.6ms)
+  Rendered shared/_nav_bar.html.erb (3.9ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 105ms (Views: 98.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-01-27 17:44:03 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYh4mAnF1i5CMQUHKwCTwsdCLIMZLTBDyxiTtoMPUJIZWzlcrXlegxSm2JWHaOYC+WSiHTAIXAYuEnOpBdohw==", "post"=>{"content"=>"this is the first post"}, "commit"=>"create post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:19
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "this is the first post"], ["creator_id", 5], ["created_at", "2020-01-27 15:44:03.084534"], ["updated_at", "2020-01-27 15:44:03.084534"]]
+  ↳ app/controllers/posts_controller.rb:19
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:19
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 27ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 17:44:03 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (3.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (15.1ms)
+  Rendered shared/_nav_bar.html.erb (2.2ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+Completed 200 OK in 108ms (Views: 98.9ms | ActiveRecord: 2.3ms)
+
+
+  [1m[36mUser Load (202.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+                                                                                                          [1m[36mUser Load (95.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
