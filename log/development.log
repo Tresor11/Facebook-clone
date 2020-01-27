@@ -18014,3 +18014,12 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 185ms (Views: 182.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-27 07:34:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3575.4ms)
+  Rendered shared/_nav_bar.html.erb (404.4ms)
+  Rendered shared/_flash.html.erb (104.6ms)
+Completed 200 OK in 22641ms (Views: 17175.0ms | ActiveRecord: 0.0ms)
+
+
