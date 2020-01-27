@@ -7,10 +7,10 @@
       <%= gravatar_for user%>
       </div>
       <div>
-        <p>First_name: <%= current_user.first_name %></p>
-        <p>Last_name: <%= current_user.last_name %></p>
-        <p>Email: <%= current_user.email%></p>
-        <p>Gender: <%= current_user.gender%></p>
+        <p>First_name: <%= user.first_name %></p>
+        <p>Last_name: <%= user.last_name %></p>
+        <p>Email: <%= user.email%></p>
+        <p>Gender: <%= user.gender%></p>
     <button type="button" class="btn btn-success">add <%=user.user_name%> as a friend</button>
       </div>
       <%end%>

@@ -4,7 +4,7 @@
 <%= render  "shared/new_post" %>
 </div>
 <div class="col-5 post-list">
-<div class="count text-center"> Recent posts <%=my_posts.count%></div>
+<div class="count text-center"> Recent posts <%=@posts.count%></div>
 <%@posts.each do |post|%>
 <div class="post specific">
 <p class="creator text-left"> Posted by @ <%=post.creator.user_name%></p>

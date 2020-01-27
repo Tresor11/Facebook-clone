@@ -15,8 +15,8 @@
         </div>
       </div>
       <div class="col-4">
-      <div class="count text-center"> You currenty have <%=my_posts.count%></div>
-      <%my_posts.each do |post|%>
+      <div class="count text-center"> You currenty have <%=@my_posts.count%></div>
+      <%@my_posts.each do |post|%>
       <div class="post">
       <p>
       <%= post.content%>
