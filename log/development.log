@@ -19026,3 +19026,264 @@ Completed 200 OK in 108ms (Views: 98.9ms | ActiveRecord: 2.3ms)
   [1m[36mUser Load (202.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
                                                                                                           [1m[36mUser Load (95.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2020-01-27 18:14:17 +0200
+  [1m[35m (40.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (294.9ms)
+  Rendered shared/_nav_bar.html.erb (2.3ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 3406ms (Views: 3349.7ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-01-27 18:14:40 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B0qEnhU+vkMAurYCQG48GeC8rOfRDbCJtxUwMuQYgN0gZeih+9kMKXvpCWKj/dWktB4g82Ux07knqBwoOWpxtg==", "user"=>{"email"=>"tresor.moise2001@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (21.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tresor.moise2001@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 1496ms (ActiveRecord: 21.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 18:14:41 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (3.4ms)
+  [1m[35m (107.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered posts/index.html.erb within layouts/application (180.3ms)
+  Rendered shared/_nav_bar.html.erb (2.6ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+Completed 200 OK in 547ms (Views: 213.1ms | ActiveRecord: 133.7ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2020-01-27 18:15:00 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (45.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."creator_id" = $1[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."creator_id" = $1 ORDER BY "posts"."created_at" DESC[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (50.7ms)
+  Rendered shared/_nav_bar.html.erb (2.0ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+Completed 200 OK in 370ms (Views: 282.9ms | ActiveRecord: 46.9ms)
+
+
+  [1m[35m (51.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (25.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20200127161708)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (829.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "comment_content" character varying, "commenter_id" integer, "posts_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200127161708_create_comments.rb:3
+  [1m[35m (46.1ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_posts_id" ON "comments"  ("posts_id")[0m
+  ↳ db/migrate/20200127161708_create_comments.rb:3
+  [1m[35m (113.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_7c76e8dc86"
+FOREIGN KEY ("commenter_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200127161708_create_comments.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200127161708"]]
+  ↳ bin/rails:9
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateLikes (20200127162453)
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (80.6ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "users_id" bigint, "posts_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[35m (39.9ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_users_id" ON "likes"  ("users_id")[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[35m (41.2ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_posts_id" ON "likes"  ("posts_id")[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200127162453"]]
+  ↳ bin/rails:9
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (52.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (31.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (22.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."commenter_id" = $1 LIMIT $2[0m  [["commenter_id", 5], ["LIMIT", 11]]
+  [1m[35m (34.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (27.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLikes (20200127162453)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (132.4ms)[0m  [1m[35mDROP TABLE "likes"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200127162453"]]
+  ↳ bin/rails:9
+  [1m[35m (66.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLikes (20200127162453)
+  [1m[35m (9.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (93.1ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "post_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[35m (39.0ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[35m (48.8ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_post_id" ON "likes"  ("post_id")[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200127162453"]]
+  ↳ bin/rails:9
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (33.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLike Load (1.4ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  [1m[36mComment Load (43.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."commenter_id" = $1 LIMIT $2[0m  [["commenter_id", 5], ["LIMIT", 11]]
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."creator_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["creator_id", 5], ["LIMIT", 11]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = $1 LIMIT $2[0m  [["post_id", 3], ["LIMIT", 11]]
+  [1m[36mLike Load (1.6ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = $1 LIMIT $2[0m  [["post_id", 3], ["LIMIT", 11]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLikes (20200127162453)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mDROP TABLE "likes"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (2.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200127162453"]]
+  ↳ bin/rails:9
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20200127161708)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (36.3ms)[0m  [1m[35mALTER TABLE "comments" DROP CONSTRAINT "fk_rails_7c76e8dc86"[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200127161708"]]
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20200127161708)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (116.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "comment_content" character varying, "commenter_id" integer, "post_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200127161708_create_comments.rb:3
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_post_id" ON "comments"  ("post_id")[0m
+  ↳ db/migrate/20200127161708_create_comments.rb:3
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_7c76e8dc86"
+FOREIGN KEY ("commenter_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200127161708_create_comments.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200127161708"]]
+  ↳ bin/rails:9
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateLikes (20200127162453)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (45.0ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "post_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[35m (49.5ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[35m (50.9ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_post_id" ON "likes"  ("post_id")[0m
+  ↳ db/migrate/20200127162453_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200127162453"]]
+  ↳ bin/rails:9
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLike Load (0.7ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."post_id" = $1 LIMIT $2[0m  [["post_id", 3], ["LIMIT", 11]]
+  [1m[36mComment Load (2.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 3], ["LIMIT", 11]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."creator_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["creator_id", 5], ["LIMIT", 11]]
+  [1m[36mLike Load (0.8ms)[0m  [1m[34mSELECT  "likes".* FROM "likes" WHERE "likes"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."commenter_id" = $1 LIMIT $2[0m  [["commenter_id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mComment Create (22.1ms)[0m  [1m[32mINSERT INTO "comments" ("comment_content", "commenter_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment_content", "this si the first comments"], ["commenter_id", 5], ["post_id", 3], ["created_at", "2020-01-27 16:53:26.322701"], ["updated_at", "2020-01-27 16:53:26.322701"]]
+  [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."commenter_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["commenter_id", 5], ["LIMIT", 11]]
