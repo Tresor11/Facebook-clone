@@ -9,8 +9,12 @@
 <div class="post specific">
 <p class="creator text-left"> Posted by @ <%=post.creator.user_name%></p>
 <p><%=post.content%></p>
+<h4>Comments</h4>
+<p>
+<%= render partial: 'shared/post_comments', collection: post.comments.recent_comments, as: :comment%>
+</p>
+<%= render partial: 'shared/comment', locals: {post: post}%>
 </div>
-<%= render  "shared/comment" %>
 <%end%>
 </div>
 </div>
