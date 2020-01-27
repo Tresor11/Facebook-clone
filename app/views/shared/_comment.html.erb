@@ -1,0 +1,6 @@
+<%= form_for [@new_post,@comment] do |f| %>
+<%= f.label :comment_content %>
+<%= f.text_area :comment_content%>
+<%= hidden_field_tag (:post_id, "#{post.id}") %>
+<%= f.submit "comment"%>
+<% end %>

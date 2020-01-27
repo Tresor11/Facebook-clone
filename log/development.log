@@ -19287,3 +19287,379 @@ Migrating to CreateLikes (20200127162453)
   [1m[36mComment Create (22.1ms)[0m  [1m[32mINSERT INTO "comments" ("comment_content", "commenter_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment_content", "this si the first comments"], ["commenter_id", 5], ["post_id", 3], ["created_at", "2020-01-27 16:53:26.322701"], ["updated_at", "2020-01-27 16:53:26.322701"]]
   [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."commenter_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["commenter_id", 5], ["LIMIT", 11]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (17.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/users/5" for 127.0.0.1 at 2020-01-27 19:16:12 +0200
+  [1m[35m (35.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (60.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."creator_id" = $1[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."creator_id" = $1 ORDER BY "posts"."created_at" DESC[0m  [["creator_id", 5]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (93.1ms)
+  Rendered shared/_nav_bar.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 13496ms (Views: 13294.9ms | ActiveRecord: 82.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:16:33 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."commenter_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["commenter_id", 5], ["LIMIT", 11]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 6.5ms)
+
+
+  
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."commenter_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["commenter_id", 5], ["LIMIT", 11]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `buid' for #<Comment::ActiveRecord_Associations_CollectionProxy:0x00007f0a50157708>
+Did you mean?  build):
+  
+app/controllers/posts_controller.rb:7:in `index'
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:18:16 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (34.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (4.5ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (3.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (547.1ms)
+  Rendered posts/index.html.erb within layouts/application (632.5ms)
+Completed 500 Internal Server Error in 1790ms (ActiveRecord: 455.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `comments_path' for #<#<Class:0x00007f0a4e295158>:0x00007f0a5c063548>
+Did you mean?  font_path):
+    1: <%= form_for(@comment) do |f| %>
+    2: <%= f.label :comment_content %>
+    3: <%= f.text_area :comment_content%>
+    4: <%= f.submit "comment"%>
+  
+app/views/shared/_comment.html.erb:1:in `_app_views_shared__comment_html_erb___1576015090037675915_69840966595500'
+app/views/posts/index.html.erb:13:in `block in _app_views_posts_index_html_erb__2460886703864604526_69841118866560'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__2460886703864604526_69841118866560'
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:27:22 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (1.9ms)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (3.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (369.4ms)
+  Rendered posts/index.html.erb within layouts/application (421.6ms)
+Completed 500 Internal Server Error in 1105ms (ActiveRecord: 118.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `comments_path' for #<#<Class:0x00007f0a4e183210>:0x00007f0a4e181500>
+Did you mean?  font_path):
+    1: <%= form_for(@comment) do |f| %>
+    2: <%= f.label :comment_content %>
+    3: <%= f.text_area :comment_content%>
+    4: <%= f.submit "comment"%>
+  
+app/views/shared/_comment.html.erb:1:in `_app_views_shared__comment_html_erb___1576015090037675915_69841118500680'
+app/views/posts/index.html.erb:13:in `block in _app_views_posts_index_html_erb__2460886703864604526_69841118305620'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__2460886703864604526_69841118305620'
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:27:43 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (2.6ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (557.9ms)
+  Rendered posts/index.html.erb within layouts/application (571.0ms)
+Completed 500 Internal Server Error in 584ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `comments_path' for #<#<Class:0x00007f0a4e183210>:0x00007f0a5030ef10>
+Did you mean?  font_path):
+    1: <%= form_for(@comment) do |f| %>
+    2: <%= f.label :comment_content %>
+    3: <%= f.text_area :comment_content%>
+    4: <%= f.submit "comment"%>
+  
+app/views/shared/_comment.html.erb:1:in `_app_views_shared__comment_html_erb___1576015090037675915_69841101682460'
+app/views/posts/index.html.erb:13:in `block in _app_views_posts_index_html_erb__2460886703864604526_69841135894160'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__2460886703864604526_69841135894160'
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:31:36 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (2.0ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (6.1ms)
+  Rendered posts/index.html.erb within layouts/application (19.2ms)
+  Rendered shared/_nav_bar.html.erb (5.0ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 603ms (Views: 449.4ms | ActiveRecord: 30.4ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2020-01-27 19:32:02 +0200
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for CommentsController):
+  
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.1) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.1) lib/rack/etag.rb:27:in `call'
+rack (2.1.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.1) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.1) lib/rack/session/abstract/id.rb:277:in `context'
+rack (2.1.1) lib/rack/session/abstract/id.rb:271:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/comments" for 127.0.0.1 at 2020-01-27 19:32:29 +0200
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eDR3QOz5bZ3UvDbGkGtD5z4lM/Dqt2+gwVKqG4VE5ecVUQC7PBuHO9lJTzkvzR6Y5gpnaOXUT+tKOpsmYVE+gQ==", "comment"=>{"comment_content"=>"this is the first comment"}, "commit"=>"comment"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+Unpermitted parameter: :comment_content
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (3.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 141ms (ActiveRecord: 29.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:32:30 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (4.2ms)
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (3.6ms)
+  Rendered posts/index.html.erb within layouts/application (66.6ms)
+  Rendered shared/_nav_bar.html.erb (3.1ms)
+  Rendered shared/_flash.html.erb (1.6ms)
+Completed 200 OK in 956ms (Views: 569.8ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:35:39 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (1.8ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (1.8ms)
+  Rendered posts/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    1: <%= form_for[@new_post , @comment] do |f| %>
+    2: <%= f.label :comment_content %>
+    3: <%= f.text_area :comment_content%>
+    4: <%= f.submit "comment"%>
+  
+app/views/shared/_comment.html.erb:1:in `_app_views_shared__comment_html_erb___1576015090037675915_69841134547640'
+app/views/posts/index.html.erb:13:in `block in _app_views_posts_index_html_erb__2460886703864604526_69841118868040'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__2460886703864604526_69841118868040'
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:36:14 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (3.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (4.3ms)
+  Rendered posts/index.html.erb within layouts/application (27.5ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 3.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"comments", :post_id=>nil}, missing required keys: [:post_id]):
+    1: <%= form_for [@new_post,@comment] do |f| %>
+    2: <%= f.label :comment_content %>
+    3: <%= f.text_area :comment_content%>
+    4: <%= f.submit "comment"%>
+  
+app/views/shared/_comment.html.erb:1:in `_app_views_shared__comment_html_erb___1576015090037675915_69841106714240'
+app/views/posts/index.html.erb:13:in `block in _app_views_posts_index_html_erb__2460886703864604526_69841105411720'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__2460886703864604526_69841105411720'
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:38:11 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (4.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (4.2ms)
+  Rendered posts/index.html.erb within layouts/application (24.7ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 32.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"comments", :post_id=>nil}, missing required keys: [:post_id]):
+    1: <%= form_for [@new_post,@comment] do |f| %>
+    2: <%= f.label :comment_content %>
+    3: <%= f.text_area :comment_content%>
+    4: <%= f.submit "comment"%>
+  
+app/views/shared/_comment.html.erb:1:in `_app_views_shared__comment_html_erb___1576015090037675915_69841106723960'
+app/views/posts/index.html.erb:13:in `block in _app_views_posts_index_html_erb__2460886703864604526_69841104823620'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__2460886703864604526_69841104823620'
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:41:21 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (5.8ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (3.4ms)
+  Rendered posts/index.html.erb within layouts/application (34.3ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 6.1ms)
+
+
+  
+SyntaxError (/home/tresor/Facebook-clone/app/views/shared/_comment.html.erb:4: syntax error, unexpected ',', expecting ')'
+...d=( hidden_field_tag (:post_id, post.id) );@output_buffer.sa...
+...                              ^
+/home/tresor/Facebook-clone/app/views/shared/_comment.html.erb:4: syntax error, unexpected ')', expecting end
+...field_tag (:post_id, post.id) );@output_buffer.safe_append='
+...                              ^
+/home/tresor/Facebook-clone/app/views/shared/_comment.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/shared/_comment.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/shared/_comment.html.erb:4: syntax error, unexpected ')', expecting end
+app/views/shared/_comment.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+app/views/posts/index.html.erb:13:in `block in _app_views_posts_index_html_erb__2460886703864604526_69841116424100'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__2460886703864604526_69841116424100'
+Started GET "/posts" for 127.0.0.1 at 2020-01-27 19:42:19 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:6
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (7.0ms)
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  Rendered shared/_comment.html.erb (1.0ms)
+  Rendered posts/index.html.erb within layouts/application (25.7ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 5.1ms)
+
+
+  
+SyntaxError (/home/tresor/Facebook-clone/app/views/shared/_comment.html.erb:4: syntax error, unexpected ',', expecting ')'
+...d=( hidden_field_tag (:post_id, "#{post.id}") );@output_buff...
+...                              ^
+/home/tresor/Facebook-clone/app/views/shared/_comment.html.erb:4: syntax error, unexpected ')', expecting end
+..._tag (:post_id, "#{post.id}") );@output_buffer.safe_append='
+...                              ^
+/home/tresor/Facebook-clone/app/views/shared/_comment.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/shared/_comment.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/shared/_comment.html.erb:4: syntax error, unexpected ')', expecting end
+app/views/shared/_comment.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+app/views/posts/index.html.erb:13:in `block in _app_views_posts_index_html_erb__2460886703864604526_69841111682460'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__2460886703864604526_69841111682460'
