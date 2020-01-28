@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
@@ -9,7 +11,7 @@ class CommentsController < ApplicationController
   end
 
   private
-  
+
   def comment_params
     params.require(:comment).permit(:comment_content, :post_id)
   end

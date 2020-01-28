@@ -7,13 +7,14 @@
 <div class="count text-center"> Recent posts <%=@posts.count%></div>
 <%@posts.each do |post|%>
 <div class="post specific">
-<p class="creator text-left"> Posted by @ <%=post.creator.user_name%></p>
-<p><%=post.content%></p>
+<p class="creator text-left"> Posted by <%= gravatar_for post.creator%> <%=post.creator.user_name%></p>
+<p class="cont"><%=post.content%></p>
+<%= render partial: 'shared/comment', locals: {post: post}%>
+<%= render partial: 'shared/like', locals: {post: post}%>
 <h4>Comments</h4>
 <p>
 <%= render partial: 'shared/post_comments', collection: post.comments.recent_comments, as: :comment%>
 </p>
-<%= render partial: 'shared/comment', locals: {post: post}%>
 </div>
 <%end%>
 </div>
