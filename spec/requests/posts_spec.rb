@@ -11,7 +11,7 @@ RSpec.describe 'Posts', type: :request do
       fill_in 'user_password', with: user.password
       click_button 'Log in'
       fill_in 'post_content', with: 'YOOOOOOOOOO'
-      click_button 'create post'
+      click_button 'share your thoughts'
       expect(page).to have_current_path(posts_path)
     end
 
@@ -22,10 +22,10 @@ RSpec.describe 'Posts', type: :request do
       fill_in 'user_password', with: user.password
       click_button 'Log in'
       fill_in 'post_content', with: 'YOOOOOOOOOO'
-      click_button 'create post'
+      click_button 'share your thoughts'
       expect(page).to have_content('Successfully posted!')
       fill_in 'post_content', with: 'YO'
-      click_button 'create post'
+      click_button 'share your thoughts'
       expect(page).to have_content('Failed to post')
     end
   end

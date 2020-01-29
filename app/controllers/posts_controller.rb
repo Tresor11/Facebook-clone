@@ -13,7 +13,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    @like = current_user.likes.build
     @post = Post.find(params[:id])
+    @comment = current_user.comments.build
   end
 
   def create

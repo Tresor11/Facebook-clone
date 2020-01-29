@@ -1,0 +1,7 @@
+<%= form_for [@post, @comment] do |f| %>
+<%= f.label 'Make a comment' %>
+<%= f.text_area :comment_content%>
+<%= f.hidden_field :post_id, value: @post.id %>
+<%= f.hidden_field :commenter_id, value: current_user.id %>
+<%= f.submit "comment",class:"btn btn-primar"%>
+<% end %>

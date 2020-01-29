@@ -9,12 +9,15 @@
 <div class="post specific">
 <p class="creator text-left"> Posted by <%= gravatar_for post.creator%> <%=post.creator.user_name%></p>
 <p class="cont"><%=post.content%></p>
+<div class="like-comment">
+<div class="like-count"><%= render partial: 'shared/like', locals: {post: post}%></div>
+<div class="comment-count"><%= image_tag  "icons8-comments-20.png" %> <span> <%=post.comments.count%></span> </div>
+</div>
 <%= render partial: 'shared/comment', locals: {post: post}%>
-<%= render partial: 'shared/like', locals: {post: post}%>
-<h4>Comments</h4>
+<h5>Latest Comments</h5>
 <p>
 <%= render partial: 'shared/post_comments', collection: post.comments.recent_comments, as: :comment%>
-</p>
+</p> 
 </div>
 <%end%>
 </div>

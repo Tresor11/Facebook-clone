@@ -1,5 +1,5 @@
 <%= form_for(@new_post) do |f| %>
-<%= f.label :content %>
+<%= f.label :content,"What's in your mind?"%>
 <%= f.text_area :content%>
-<%= f.submit "create post"%>
+<%= f.submit "share your thoughts",class: "btn btn-primar"%>
 <% end %>

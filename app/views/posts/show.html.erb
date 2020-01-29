@@ -1,3 +1,13 @@
-<h1>
-<%=@post.content%>
-</h1>
+<div class="post specific col-6 m-auto">
+<p class="creator text-left"> Posted by <%= gravatar_for @post.creator%> <%=@post.creator.user_name%></p>
+<p class="cont"><%=@post.content%></p>
+<div class="like-comment">
+<div class="like-count"><%= render partial: 'shared/like_count'%></div>
+<div class="comment-count"><%= image_tag  "icons8-comments-20.png" %> <span> <%=@post.comments.count%></span> </div>
+</div>
+ <%= render partial: 'shared/comment_count'%>
+<h4>Comments</h4>
+<p>
+<%= render partial: 'shared/post_comments', collection: @post.comments.recent_comments, as: :comment%>
+</p> 
+</div>
