@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  devise_for :users
+ resources :requests
  resources :posts do
   resources :comments
   resources :likes
@@ -9,5 +10,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: 'devise/sessions#new'
   end
-
+  get "/notification", to: "users#notification"
 end

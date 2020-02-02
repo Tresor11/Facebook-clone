@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-6 m-auto">
+  <div class=people>
+      <%current_user.friend_request.each do |user|%>
+      <div class="grav-img">
+      <%= gravatar_for user%>
+      </div>
+      <div>
+        <p>First_name: <%= user.first_name %></p>
+        <p>Last_name: <%= user.last_name %></p>
+        <p>Email: <%= user.email%></p>
+        <p>Gender: <%= user.gender%></p>
+        <%= render partial: 'shared/accept', locals: {user: user}%>
+      </div>
+      <%end%>
+      </div>
+      </div>
+      </div>
+      </div>
