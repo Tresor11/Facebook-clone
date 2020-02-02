@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="col-4">
-      <div class="count text-center"> You currenty have <%=@my_posts.count%></div>
+      <div class="count text-center"> You currenty have <%=@my_posts.count%>posts</div>
       <%@my_posts.each do |post|%>
       <div class="post">
       <p>
@@ -23,6 +23,22 @@
       </p>
       </div>
       <%end%>
+      </div>
+      <div class="col-4">
+      <div class="count text-center"> You have <%=current_user.friends.count%> friends</div>
+        <div class=people>
+      <%current_user.friends.each do |user|%>
+      <div class="grav-img">
+      <%= gravatar_for user%>
+      </div>
+      <div>
+        <p>First_name: <%= user.first_name %></p>
+        <p>Last_name: <%= user.last_name %></p>
+        <p>Email: <%= user.email%></p>
+        <p>Gender: <%= user.gender%></p>
+      </div>
+      <%end%>
+      </div>
       </div>
     </div>
 </div>

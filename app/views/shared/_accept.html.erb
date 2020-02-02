@@ -1,0 +1,4 @@
+<%= form_for(Request.new) do |f| %>
+<%= f.hidden_field :user_id, value: user.id  %>
+<%= f.submit "accpet request",class:"btn btn-success"%>
+<% end %>

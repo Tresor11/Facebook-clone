@@ -2,7 +2,7 @@
   <div class="row">
   <div class="col-6 m-auto">
   <div class=people>
-      <%@users.each do |user|%>
+      <%@others.each do |user|%>
       <div class="grav-img">
       <%= gravatar_for user%>
       </div>
@@ -11,10 +11,26 @@
         <p>Last_name: <%= user.last_name %></p>
         <p>Email: <%= user.email%></p>
         <p>Gender: <%= user.gender%></p>
-    <button type="button" class="btn btn-success">add <%=user.user_name%> as a friend</button>
+        <%= render partial: 'shared/add_friend', locals: {user: user}%>
       </div>
       <%end%>
       </div>
   </div>
+    <div class="col-6 m-auto">
+  <div class="pending">
+   <%@current_user.pending_request.each do |user|%>
+      <div class="grav-img">
+      <%= gravatar_for user%>
+      </div>
+      <div>
+        <p>First_name: <%= user.first_name %></p>
+        <p>Last_name: <%= user.last_name %></p>
+        <p>Email: <%= user.email%></p>
+        <p>Gender: <%= user.gender%></p>
+        <button type="button" class="btn btn-danger">pending request</button>
+      </div>
+      <%end%>
+    </div>
+</div>
   </div>
 </div>

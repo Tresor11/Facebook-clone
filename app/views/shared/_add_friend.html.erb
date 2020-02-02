@@ -1,0 +1,4 @@
+<%= form_for(Request.new) do |f| %>
+<%= f.hidden_field :user_id, value: user.id  %>
+<%= f.submit "add#{user.user_name} as a friend",class:"btn btn-success"%>
+<% end %>

@@ -16,34 +16,50 @@ class User < ApplicationRecord
   validates :user_name, presence: true, length: { in: 3..100 }
   validates :gender, presence: true
 
-  # def friends
-  #   sent = sent_requests.map do |friendship|
-  #     friendship.recever if friendship.status
-  #   end
-  #   receved = receved_requests.map do |friendship|
-  #     friendship.sender if friendship.status
-  #   end
-  #   (sent + receved).compact
-  # end
+  def friends
+    sent = sent_requests.map do |friendship|
+      friendship.recever if friendship.status
+    end
+    receved = receved_requests.map do |friendship|
+      friendship.sender if friendship.status
+    end
+    (sent + receved).compact
+  end
 
-  # def pendeing_request
-  #   sent_requests.map { |friendship| friendship.recever unless friendship.status }.compact
-  # end
+  def not_friend
+    collect = []
+    other = User.all.map do |user|
+      next if user == self
 
-  # def friend_request
-  #   receved_requests.map do |friendship|
-  #     friendship.sender unless friendship.status
-  #   end .compact
-  # end
+      if !friends.include?(user) && !pending_request.include?(user) && !friend_request.include?(user)
+        collect << user
+      end
+    end
+    collect.compact
+  end
 
-  # def accept_request(user)
-  #   friendship = receved_requests.find { |f| f.sender == user }
-  #   friendship.status = true
-  #   friends << friendship
-  #   friendship.save
-  # end
+  def pending_request
+    sent_requests.map { |friendship| friendship.recever unless friendship.status }.compact
+  end
 
-  # def friend?(user)
-  #   friends.include?(user)
-  # end
+  def friend_request
+    receved_requests.map do |friendship|
+      friendship.sender unless friendship.status
+    end.compact
+  end
+
+  def accept_request(user)
+    friendship = receved_requests.find { |f| f.sender == user }
+    friendship.status = true
+    friends << friendship
+    friendship.save
+  end
+
+  def send_request(user)
+    Request.create(recever_id: user.id, sender_id: id)
+  end
+
+  def friend?(user)
+    friends.include?(user)
+  end
 end
