@@ -34226,3 +34226,35 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 92ms (Views: 64.5ms | ActiveRecord: 5.6ms)
 
 
+Started GET "/notification" for 127.0.0.1 at 2020-02-03 00:14:00 +0200
+Processing by UsersController#notification as HTML
+  [1m[36mUser Load (71.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/notification.html.erb within layouts/application
+  [1m[36mRequest Load (34.9ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."recever_id" = $1[0m  [["recever_id", 8]]
+  ↳ app/models/user.rb:46
+  [1m[36mUser Load (13.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+Started GET "/notification" for 127.0.0.1 at 2020-02-03 00:15:10 +0200
+  Rendered shared/_accept.html.erb (1765.5ms)
+  Rendered users/notification.html.erb within layouts/application (13572.0ms)
+  Rendered shared/_nav_bar.html.erb (185.3ms)
+  Rendered shared/_flash.html.erb (82.1ms)
+Completed 200 OK in 69639ms (Views: 64506.6ms | ActiveRecord: 433.1ms)
+
+
+Processing by UsersController#notification as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/notification.html.erb within layouts/application
+  [1m[36mRequest Load (1.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."recever_id" = $1[0m  [["recever_id", 8]]
+  ↳ app/models/user.rb:46
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:47
+  Rendered shared/_accept.html.erb (440.7ms)
+  Rendered users/notification.html.erb within layouts/application (2609.2ms)
+  Rendered shared/_nav_bar.html.erb (75.4ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 16383ms (Views: 14102.6ms | ActiveRecord: 36.7ms)
+
+
