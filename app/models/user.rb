@@ -49,6 +49,12 @@ class User < ApplicationRecord
   end
 
   def accept_request(user)
+    Request.all.map do |x|
+      if (x.friend_pair == "#{user.id},#{id}") || (x.friend_pair == "#{id},#{user.id}")
+        return false
+      end
+    end
+    friendship.friend_pair = "#{id},#{user.id}"
     friendship = receved_requests.find { |f| f.sender == user }
     friendship.status = true
     friends << friendship
@@ -56,10 +62,23 @@ class User < ApplicationRecord
   end
 
   def send_request(user)
-    Request.create(recever_id: user.id, sender_id: id)
+    Request.all.map do |x|
+      if (x.friend_pair == "#{user.id},#{id}") || (x.friend_pair == "#{id},#{user.id}")
+        return false
+      end
+    end
+    friend_pair = "#{id},#{user.id}"
+    Request.create(recever_id: user.id, sender_id: id, friend_pair: friend_pair)
   end
 
   def friend?(user)
     friends.include?(user)
+  end
+
+  def feed
+    friends_ids = friends.map(&:id)
+    friends_ids.join(',')
+    Post.where('creator_id IN (:friends_ids) OR creator_id = :user_id',
+               friends_ids: friends_ids, user_id: id).to_a
   end
 end
