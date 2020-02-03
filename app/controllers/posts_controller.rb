@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = current_user.feed
     @new_post = current_user.posts.build
     @comment = current_user.comments.build
     @like = current_user.likes.build
