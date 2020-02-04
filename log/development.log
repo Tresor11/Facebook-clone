@@ -36492,3 +36492,552 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 10664ms (Views: 10262.5ms | ActiveRecord: 332.0ms)
 
 
+Started GET "/auth/facebook" for ::1 at 2020-02-04 20:41:01 +0300
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRequests (20200201002450)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (41.7ms)[0m  [1m[35mCREATE TABLE "requests" ("id" bigserial primary key, "sender_id" integer, "recever_id" integer, "status" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200201002450_create_requests.rb:3
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_requests_on_sender_id" ON "requests"  ("sender_id")[0m
+  ↳ db/migrate/20200201002450_create_requests.rb:9
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE  INDEX  "index_requests_on_recever_id" ON "requests"  ("recever_id")[0m
+  ↳ db/migrate/20200201002450_create_requests.rb:10
+  [1m[35m (18.7ms)[0m  [1m[35mALTER TABLE "requests" ADD CONSTRAINT "fk_rails_dafc123fb2"
+FOREIGN KEY ("sender_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200201002450_create_requests.rb:11
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "requests" ADD CONSTRAINT "fk_rails_e07e073370"
+FOREIGN KEY ("recever_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200201002450_create_requests.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200201002450"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddFriendsPair (20200203084848)
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.0ms)[0m  [1m[35mALTER TABLE "requests" ADD "friend_pair" character varying[0m
+  ↳ db/migrate/20200203084848_add_friends_pair.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200203084848"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (2.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/auth/facebook" for ::1 at 2020-02-04 20:41:56 +0300
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2020-02-04 20:44:22 +0300
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2020-02-04 20:45:24 +0300
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for ::1 at 2020-02-04 20:46:00 +0300
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+(facebook) Request phase initiated.
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddOmniauthToUsers (20200204174922)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying[0m
+  ↳ db/migrate/20200204174922_add_omniauth_to_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  ↳ db/migrate/20200204174922_add_omniauth_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200204174922"]]
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3702015080974220640)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-02-04 21:16:25 +0300
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (298.1ms)
+  Rendered shared/_nav_bar.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 15225ms (Views: 15169.8ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:16:48 +0300
+(facebook) Request phase initiated.
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:16:50 +0300
+(facebook) Request phase initiated.
+Started GET "/" for ::1 at 2020-02-04 21:24:08 +0300
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (97.7ms)
+  Rendered shared/_nav_bar.html.erb (11.7ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 1053ms (Views: 1007.8ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:24:19 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:24:20 +0300
+Started GET "/users/auth/facebook/callback?code=AQB5ND_cJTC6imRkGSTmxUjpoYkhhqm1COsWY5peY8NEvcveFtstbNo5Bd0eL8iSHpppBtyEJTVvSmD7mG283US2Lbz91OlGgcsOoXJ9JQa7g2IniSApWbixYiFWY4khKfaT9RkYqMdw3gJdLDaXkjeng-Ggp66gs1jcZOkvREl3rcGmYnhYvfmWjN0LTyMD1aVQvucYYRRzwNSLRoCyS1vN7wRrn659l5jXuuPxFjfcbotY7cfmDy-f8yiDqepT6u5OWq5LZRJksh_UOG1MbUUXYP_3K1pgFTHRgGVu369EP9HincAW8NjVVaQvc80PC2U&state=5a3e2243778469b309826d14c4a754d88c8a5e4e78fd77b0" for ::1 at 2020-02-04 21:24:35 +0300
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+app/controllers/omniauth_callbacks_controller.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2020-02-04 21:28:06 +0300
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (132.3ms)
+  Rendered shared/_nav_bar.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+Completed 200 OK in 1066ms (Views: 1011.7ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:28:13 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:28:14 +0300
+Started GET "/users/auth/facebook/callback?code=AQAQ9TdFN9JEvxa5JXoiJcePDe2JUtcWaJUpurvH4CdwNxGx5yrodNio9O8aBGkBudwTjd3ceAs61rHlNYMZ5Ch1FlE9nNm5l2YVP6VRX9Jfwmir88e_FuClOlmPBl1CGM3yfUEo-ohCQ33HObDpMvVmOcktlFmHa079ee96bwSRv7R819qESSAIS-mem9-ju6XzIp2uH640iJob8QxW7IIuZNlbxBbBLdP5MDK4nkDw-kovt9YbgxBF0doGUyiNVbd9VlVEEXHP_ShpSR219sC0mCc-YJYjXyNlKCgU8CS04XB--_2Vm6AzORnLDX1npD8&state=2f510b5373aa22b64659e9674881dfc8a4d6f403ee8d86d3" for ::1 at 2020-02-04 21:28:16 +0300
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAQ9TdFN9JEvxa5JXoiJcePDe2JUtcWaJUpurvH4CdwNxGx5yrodNio9O8aBGkBudwTjd3ceAs61rHlNYMZ5Ch1FlE9nNm5l2YVP6VRX9Jfwmir88e_FuClOlmPBl1CGM3yfUEo-ohCQ33HObDpMvVmOcktlFmHa079ee96bwSRv7R819qESSAIS-mem9-ju6XzIp2uH640iJob8QxW7IIuZNlbxBbBLdP5MDK4nkDw-kovt9YbgxBF0doGUyiNVbd9VlVEEXHP_ShpSR219sC0mCc-YJYjXyNlKCgU8CS04XB--_2Vm6AzORnLDX1npD8", "state"=>"2f510b5373aa22b64659e9674881dfc8a4d6f403ee8d86d3"}
+  [1m[36mUser Load (14.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+Completed 500 Internal Server Error in 387ms (ActiveRecord: 14.8ms)
+
+
+  
+NoMethodError (undefined method `name=' for #<User:0x000000000e28f290>):
+  
+app/models/user.rb:22:in `block in from_omniauth'
+app/models/user.rb:19:in `from_omniauth'
+app/controllers/omniauth_callbacks_controller.rb:4:in `facebook'
+Started GET "/" for ::1 at 2020-02-04 21:33:17 +0300
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (75.6ms)
+  Rendered shared/_nav_bar.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 839ms (Views: 796.0ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:33:20 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:33:21 +0300
+Started GET "/users/auth/facebook/callback?code=AQAQ4TBdkrX2sps_2TU1VWtoqOUBWRduvA4UXWsj6p1rYQafqDbPSq6kHplU0im5Fms_4twNMXVz6s3Qe7DxKDpNiyc-eL_m4eHeN1j6tx_b1tFvs6pfA-OiTGJ-bYHIegV6dX3jeWWQR9zwCzv7N9eUwGJFFI_ZHor4wL-O5KPQ1o07y5vvFlaoopr1gYL4OMZQtMzxOUW2yivS-gqFseTU51jxupJyNXUUuILq5k_z9fIpc-mqaiZhIqJ3sm29vqdQsqARA5Tg9LVF1en2Ab6i7GHku1BbFqDUiCwqqOgGb-dzhgrH3qppE8kfXlvsW58&state=da0f598afb8a433350ce0f4e0637ab9961767315e60c4954" for ::1 at 2020-02-04 21:33:21 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAQ4TBdkrX2sps_2TU1VWtoqOUBWRduvA4UXWsj6p1rYQafqDbPSq6kHplU0im5Fms_4twNMXVz6s3Qe7DxKDpNiyc-eL_m4eHeN1j6tx_b1tFvs6pfA-OiTGJ-bYHIegV6dX3jeWWQR9zwCzv7N9eUwGJFFI_ZHor4wL-O5KPQ1o07y5vvFlaoopr1gYL4OMZQtMzxOUW2yivS-gqFseTU51jxupJyNXUUuILq5k_z9fIpc-mqaiZhIqJ3sm29vqdQsqARA5Tg9LVF1en2Ab6i7GHku1BbFqDUiCwqqOgGb-dzhgrH3qppE8kfXlvsW58", "state"=>"da0f598afb8a433350ce0f4e0637ab9961767315e60c4954"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `name=' for #<User:0x000000000f0cba20>):
+  
+app/models/user.rb:22:in `block in from_omniauth'
+app/models/user.rb:19:in `from_omniauth'
+app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+Started GET "/" for ::1 at 2020-02-04 21:34:06 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+  Rendered shared/_nav_bar.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 227ms (Views: 225.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:34:10 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:34:10 +0300
+Started GET "/users/auth/facebook/callback?code=AQCCoV90oPrVYkr6XdZCaIe_DJ4fs1zK8sUdhffVIIbIeMFtCKlu2nhspxutjr_msywM-1NLyhZHdHeLulZ5m3QqNzV5oGLRI0U4Eoa17JAV4Tdl9TbwBr-Alc9rSABgOaHh_nJn2y0L5fejhywytMaZym69JiB0qYokhYL8y_iBxcM5X1QMRRHVVfQyvlmxJX4erCd-4LvwqGp9i-X3NDMx6uj-eDBYvWg7AgUnJkMyQ48NO2hBNzt7Wymhwz9bAxpROb1FXg97ASm_vRrHYsq1LC0UeLn2zqr56umOvguLxEja02wajc7syAYrvQTNMfk&state=0edd09c58772a0fccc9223a74fc53a9e6c8b1c2f3248192e" for ::1 at 2020-02-04 21:34:10 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCCoV90oPrVYkr6XdZCaIe_DJ4fs1zK8sUdhffVIIbIeMFtCKlu2nhspxutjr_msywM-1NLyhZHdHeLulZ5m3QqNzV5oGLRI0U4Eoa17JAV4Tdl9TbwBr-Alc9rSABgOaHh_nJn2y0L5fejhywytMaZym69JiB0qYokhYL8y_iBxcM5X1QMRRHVVfQyvlmxJX4erCd-4LvwqGp9i-X3NDMx6uj-eDBYvWg7AgUnJkMyQ48NO2hBNzt7Wymhwz9bAxpROb1FXg97ASm_vRrHYsq1LC0UeLn2zqr56umOvguLxEja02wajc7syAYrvQTNMfk", "state"=>"0edd09c58772a0fccc9223a74fc53a9e6c8b1c2f3248192e"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `name=' for #<User:0x000000000e58cdf8>):
+  
+app/models/user.rb:22:in `block in from_omniauth'
+app/models/user.rb:19:in `from_omniauth'
+app/controllers/users/omniauth_callbacks_controller.rb:4:in `facebook'
+Started POST "/__web_console/repl_sessions/c664cdf094524e9b9f5dd48884ea3e9c/trace" for ::1 at 2020-02-04 21:36:01 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:39:11 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:39:12 +0300
+Started GET "/users/auth/facebook/callback?code=AQCMXyiadzwxRWMYBbw32nosYqhKBazXcGaIx1q2dNIcSJWfC1KE88MxoNVoWxHb637EzU_QzKBR4fURAKNCuvL8cB0T4G4WLjB8j29jAfgAPhzT7uL4_ieh24LwSHns5V3ObPudo6pu93U2F4_wdzmWcTsLMlBzsl7TULJzR6LqLaDR7UqZl5h_SaCv1ReGLlObHeS5k69K-c_6H6pO6jKl48TDRbE66aD3piMvulR1lF-Z1yLNG_3PJsHSvlY-XWtsMq3mETlCy243uOLKESaxGmL56Q-KRYLZD-cd_dXfjQrIGJ_qR82UTgJKmvb5GDQ&state=fc0c6a91751d9748505d080464d065fcdb50e1e0aef72285" for ::1 at 2020-02-04 21:39:13 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCMXyiadzwxRWMYBbw32nosYqhKBazXcGaIx1q2dNIcSJWfC1KE88MxoNVoWxHb637EzU_QzKBR4fURAKNCuvL8cB0T4G4WLjB8j29jAfgAPhzT7uL4_ieh24LwSHns5V3ObPudo6pu93U2F4_wdzmWcTsLMlBzsl7TULJzR6LqLaDR7UqZl5h_SaCv1ReGLlObHeS5k69K-c_6H6pO6jKl48TDRbE66aD3piMvulR1lF-Z1yLNG_3PJsHSvlY-XWtsMq3mETlCy243uOLKESaxGmL56Q-KRYLZD-cd_dXfjQrIGJ_qR82UTgJKmvb5GDQ", "state"=>"fc0c6a91751d9748505d080464d065fcdb50e1e0aef72285"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:19
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somaliwarsan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:19
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 222ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:39:15 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (178.2ms)
+  Rendered shared/_nav_bar.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 494ms (Views: 492.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-04 21:39:50 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+  Rendered shared/_nav_bar.html.erb (2.9ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 544ms (Views: 536.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:39:53 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:39:53 +0300
+Started GET "/users/auth/facebook/callback?code=AQCY8dCEaR24onmsXQyO6mFNJsxj5LPk6UsEeTXycRcAyY-YpBFqo8HlVXJqjW5N3lWG7T0YF_muf0gwNMK8GpgCILvXfFcSo2_E6xlJe940g6oNDbNVRSRpWmy30f0guax4ts0Orr5RM-CjeH29L1pWKzwK4LmOUtLIngQvz_jsPOUfeYw-Zp70LVFQmDfA7L-fcvY9yQ508M11Z6DU2YXWuF7Tnkf--I0JHNcHlcTeBqyVT5kNtnqwMuLTnUkdVtth9LI8pO3oss3tHT1x_kRipK3cgOjzkQUsjLtxAwX2OKgSxHbhz8-q4T0mWwIbBug&state=0a8ac5cfb28d97f69c391a801a203a24cdfb3c1ffe083351" for ::1 at 2020-02-04 21:39:53 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCY8dCEaR24onmsXQyO6mFNJsxj5LPk6UsEeTXycRcAyY-YpBFqo8HlVXJqjW5N3lWG7T0YF_muf0gwNMK8GpgCILvXfFcSo2_E6xlJe940g6oNDbNVRSRpWmy30f0guax4ts0Orr5RM-CjeH29L1pWKzwK4LmOUtLIngQvz_jsPOUfeYw-Zp70LVFQmDfA7L-fcvY9yQ508M11Z6DU2YXWuF7Tnkf--I0JHNcHlcTeBqyVT5kNtnqwMuLTnUkdVtth9LI8pO3oss3tHT1x_kRipK3cgOjzkQUsjLtxAwX2OKgSxHbhz8-q4T0mWwIbBug", "state"=>"0a8ac5cfb28d97f69c391a801a203a24cdfb3c1ffe083351"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:19
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somaliwarsan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:19
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 264ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:39:54 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (33.3ms)
+  Rendered shared/_nav_bar.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 410ms (Views: 407.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-04 21:40:22 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (7.2ms)
+  Rendered shared/_nav_bar.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 406ms (Views: 403.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:40:25 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:40:26 +0300
+Started GET "/users/auth/facebook/callback?code=AQDoqI6h76W2nhTe7ummff_EIAqYfeXSAm7F6iq4CrdhFFOPwMKZQ02UpTBPQk5e5OE5JgGt1nNZ6cRV79-QcS5v-ygcwIYbuWpsBgQ6ZQXPxluStSblpRk-pnnKkJMaMIuj-BKPRhafdIJwmCpRALxQ1dC-6eZATHJ7SdFVojv1scLEqaOB4OKfsEuNOAieUg8bTW9wM9KyxxbXq6YTf6oCi7pW5eVKt9PShO_C5E9TsgNXM63CHNxNjHEBOugZQpjGV-0RhQT3yrfHFzxBphus18Tn1VhmYx2upy3QrY7PCPXamxjZmeVOAdgF8SBBE7c&state=417b29f5d2a6b20f93710aae38f5533cd9772f3677480409" for ::1 at 2020-02-04 21:40:27 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDoqI6h76W2nhTe7ummff_EIAqYfeXSAm7F6iq4CrdhFFOPwMKZQ02UpTBPQk5e5OE5JgGt1nNZ6cRV79-QcS5v-ygcwIYbuWpsBgQ6ZQXPxluStSblpRk-pnnKkJMaMIuj-BKPRhafdIJwmCpRALxQ1dC-6eZATHJ7SdFVojv1scLEqaOB4OKfsEuNOAieUg8bTW9wM9KyxxbXq6YTf6oCi7pW5eVKt9PShO_C5E9TsgNXM63CHNxNjHEBOugZQpjGV-0RhQT3yrfHFzxBphus18Tn1VhmYx2upy3QrY7PCPXamxjZmeVOAdgF8SBBE7c", "state"=>"417b29f5d2a6b20f93710aae38f5533cd9772f3677480409"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:19
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somaliwarsan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:19
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 413ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:40:32 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.1ms)
+  Rendered shared/_nav_bar.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (1.4ms)
+Completed 200 OK in 400ms (Views: 397.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-04 21:45:38 +0300
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (81.8ms)
+  Rendered shared/_nav_bar.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 890ms (Views: 844.2ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:45:41 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:45:43 +0300
+Started GET "/users/auth/facebook/callback?code=AQCsNCJrhEetw5hSeZ48iZRGv5qyrWpgFrsNI75BJuMh671hf7BMgjlH9YFoQnGwg8WWT5ZRUwxqyIkRv_BjCZ_PAdUBDkJzIx74dc9WlCQJWKf4jQDaB7i4qw4v0jqJ-FP_a3gL1n99ZjFEjwhzuoCEIoIYWBeWD9ESMH7HsFgZZSC_KsMFEoDg59U-qx2XZG5qp-zS3rf2Kn8DfXiNsAgYeudmPZMTMJWWNOTLC1J6_KVMKVCfU-muEa6q-qY2tmQU5U4Y9vWKDhpnTvYl0f6oFCWwuoKJw_CxdCN25Eal0wr-gQUNihNMi-ZRRYmlQ5g&state=ee07d5cf1c1467283444158456ad05d9b413bfe43c4329de" for ::1 at 2020-02-04 21:45:44 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCsNCJrhEetw5hSeZ48iZRGv5qyrWpgFrsNI75BJuMh671hf7BMgjlH9YFoQnGwg8WWT5ZRUwxqyIkRv_BjCZ_PAdUBDkJzIx74dc9WlCQJWKf4jQDaB7i4qw4v0jqJ-FP_a3gL1n99ZjFEjwhzuoCEIoIYWBeWD9ESMH7HsFgZZSC_KsMFEoDg59U-qx2XZG5qp-zS3rf2Kn8DfXiNsAgYeudmPZMTMJWWNOTLC1J6_KVMKVCfU-muEa6q-qY2tmQU5U4Y9vWKDhpnTvYl0f6oFCWwuoKJw_CxdCN25Eal0wr-gQUNihNMi-ZRRYmlQ5g", "state"=>"ee07d5cf1c1467283444158456ad05d9b413bfe43c4329de"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somaliwarsan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 191ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:45:45 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (162.9ms)
+  Rendered shared/_nav_bar.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 348ms (Views: 345.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-04 21:46:30 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered shared/_nav_bar.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 208ms (Views: 187.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:46:31 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:46:31 +0300
+Started GET "/users/auth/facebook/callback?code=AQBzgp2pUiiSOWe4sZWEJEfv8Wq1L2MrrhQdclKfubgQFXJnTFVryH6sEgfS_0-05IjhkWq2A1__sNtJ80I4Ivp3GbBIlh4finn4FM3O11yNaB3CbWTeJM24g_tmM6aHcqlL2Iom9hBWv-vOhd-y95N2qMSVq1ULgCAcBpIwHMo94tvWt3m3seVpbQnKHmmBHGqW8XK6Yof9uzOVHHeXJQwVj0QqCBhMM1yFcKUC7Jq-YjSt9XDmuHHaIXZSiawQwLBYl7yQosP6cLM85uq6TKUTnOM-DtoTk0DyWuiQeLByM7V9mIiXTouEqYAAcF3_Lgs&state=bdf5e1daeccbd9895eff09dc1e80030331ab9f9538a6a1c7" for ::1 at 2020-02-04 21:46:33 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBzgp2pUiiSOWe4sZWEJEfv8Wq1L2MrrhQdclKfubgQFXJnTFVryH6sEgfS_0-05IjhkWq2A1__sNtJ80I4Ivp3GbBIlh4finn4FM3O11yNaB3CbWTeJM24g_tmM6aHcqlL2Iom9hBWv-vOhd-y95N2qMSVq1ULgCAcBpIwHMo94tvWt3m3seVpbQnKHmmBHGqW8XK6Yof9uzOVHHeXJQwVj0QqCBhMM1yFcKUC7Jq-YjSt9XDmuHHaIXZSiawQwLBYl7yQosP6cLM85uq6TKUTnOM-DtoTk0DyWuiQeLByM7V9mIiXTouEqYAAcF3_Lgs", "state"=>"bdf5e1daeccbd9895eff09dc1e80030331ab9f9538a6a1c7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somaliwarsan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 170ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:46:52 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.3ms)
+  Rendered shared/_nav_bar.html.erb (1.4ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 396ms (Views: 394.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-04 21:49:53 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0a1xodjKTpsfy7NLD0ZEWiTPg4I7uJllq/sclZgDdyme8q3uGd8v6SrNXUUGoEnZ+vjNyw2JkArXUY6rtyBS8w==", "user"=>{"first_name"=>"Sharmarke", "last_name"=>"Ahmed", "user_name"=>"hassan.h", "email"=>"somaliwarsan@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"male"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somaliwarsan@gmail.com"], ["LIMIT", 1]]
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.9ms)
+  Rendered shared/_nav_bar.html.erb (1.0ms)
+  Rendered shared/_flash.html.erb (1.6ms)
+Completed 200 OK in 506ms (Views: 440.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-04 21:54:22 +0300
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (102.5ms)
+  Rendered shared/_nav_bar.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 987ms (Views: 933.8ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:54:25 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:54:30 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:54:53 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:54:53 +0300
+Started GET "/users/auth/facebook/callback?code=AQBezqwo03PRvf1pBc_rqSTNifgrHfGaA5NIIBv8SFucdlMlVV3VKt9_LWE0FS9-vW9PMMejA9kYT69aPxPJFTPzqFUAtnHvt7vm24aO2mRCz5utMfg_svgUj125o6_-bcL24yaDh_vSmbnXyYrDlFn-KPRgT3uscXurfX7hhb46S6JgxfYMntxEyxAnBiKMiLEX6ubmxVOX-HzT8anK_MMTEZ2FONcPF3grHN7oJnnRwAAwmIJf3SM3z2PtFSdFyDQ_JOIi4wci53ohnDiZEVlXdc9s8NyDKHiAfQGPbA-wFcyY4D-25XugDse2Y3jru7s&state=7fc33e99042d027a75effbd1c365214262cafc124c2f0e4b" for ::1 at 2020-02-04 21:54:53 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBezqwo03PRvf1pBc_rqSTNifgrHfGaA5NIIBv8SFucdlMlVV3VKt9_LWE0FS9-vW9PMMejA9kYT69aPxPJFTPzqFUAtnHvt7vm24aO2mRCz5utMfg_svgUj125o6_-bcL24yaDh_vSmbnXyYrDlFn-KPRgT3uscXurfX7hhb46S6JgxfYMntxEyxAnBiKMiLEX6ubmxVOX-HzT8anK_MMTEZ2FONcPF3grHN7oJnnRwAAwmIJf3SM3z2PtFSdFyDQ_JOIi4wci53ohnDiZEVlXdc9s8NyDKHiAfQGPbA-wFcyY4D-25XugDse2Y3jru7s", "state"=>"7fc33e99042d027a75effbd1c365214262cafc124c2f0e4b"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somaliwarsan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 182ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:54:54 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (97.4ms)
+  Rendered shared/_nav_bar.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 346ms (Views: 344.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:55:40 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.8ms)
+  Rendered shared/_nav_bar.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 400ms (Views: 399.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/cancel" for ::1 at 2020-02-04 21:55:47 +0300
+Processing by Devise::RegistrationsController#cancel as HTML
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:55:47 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.8ms)
+  Rendered shared/_nav_bar.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 187ms (Views: 186.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/cancel" for ::1 at 2020-02-04 21:55:52 +0300
+Processing by Devise::RegistrationsController#cancel as HTML
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:55:52 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.8ms)
+  Rendered shared/_nav_bar.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 171ms (Views: 170.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-04 21:55:54 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered shared/_nav_bar.html.erb (0.7ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 190ms (Views: 188.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:55:56 +0300
+Started GET "/users/auth/facebook" for ::1 at 2020-02-04 21:55:56 +0300
+Started GET "/users/auth/facebook/callback?code=AQDemNN7bt7_D5ZugDuitTGZPJitmtDhMvyG7dplKnGS1GeMiVIDTMytHGnICfX1vu2WLVHhbKW9nzYCT7dzwsISj1zUjJqTdCzb7M7WG2KxxD3aNSc1W5fy8AUFFTB-1FMZ374n08WpBVP0zBE4DbTYQaiXX93MCQjOqjMAwT5XLWgtvJpOOq9UuMjtuQXLCi8VswW8pF44HK_5R40DVBNB7TMfsib2aZjcthVyLEoIxqzrsMl7o-t6GQ2BjBq3vueMjJesAMpwBKeXgpPPj5mjmK5AfRqgpzFeTyQsm22iuDg93tGERCuxw178PscwUjU&state=74fead84e07245fb9819ff52ebb3708ec37ee93ecfa3cab9" for ::1 at 2020-02-04 21:55:56 +0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDemNN7bt7_D5ZugDuitTGZPJitmtDhMvyG7dplKnGS1GeMiVIDTMytHGnICfX1vu2WLVHhbKW9nzYCT7dzwsISj1zUjJqTdCzb7M7WG2KxxD3aNSc1W5fy8AUFFTB-1FMZ374n08WpBVP0zBE4DbTYQaiXX93MCQjOqjMAwT5XLWgtvJpOOq9UuMjtuQXLCi8VswW8pF44HK_5R40DVBNB7TMfsib2aZjcthVyLEoIxqzrsMl7o-t6GQ2BjBq3vueMjJesAMpwBKeXgpPPj5mjmK5AfRqgpzFeTyQsm22iuDg93tGERCuxw178PscwUjU", "state"=>"74fead84e07245fb9819ff52ebb3708ec37ee93ecfa3cab9"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10216102135042547"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somaliwarsan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 170ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-04 21:55:57 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.1ms)
+  Rendered shared/_nav_bar.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 227ms (Views: 226.2ms | ActiveRecord: 0.0ms)
+
+
