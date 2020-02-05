@@ -37041,3 +37041,350 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 227ms (Views: 226.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-02-05 17:17:11 +0200
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (525.7ms)
+  Rendered shared/_nav_bar.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+Completed 200 OK in 6566ms (Views: 6418.5ms | ActiveRecord: 61.3ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 17:17:29 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 17:17:32 +0200
+Started GET "/" for 127.0.0.1 at 2020-02-05 17:28:53 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (45.0ms)
+  Rendered shared/_nav_bar.html.erb (1.3ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+Completed 200 OK in 3577ms (Views: 3540.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 17:29:02 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 17:29:02 +0200
+Started GET "/" for 127.0.0.1 at 2020-02-05 17:31:32 +0200
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (391.6ms)
+  Rendered shared/_nav_bar.html.erb (2.0ms)
+  Rendered shared/_flash.html.erb (1.3ms)
+Completed 200 OK in 2822ms (Views: 2541.8ms | ActiveRecord: 202.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 17:31:38 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 17:31:40 +0200
+Started GET "/" for 127.0.0.1 at 2020-02-05 18:21:24 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (157.6ms)
+  Rendered shared/_nav_bar.html.erb (2.1ms)
+  Rendered shared/_flash.html.erb (1.1ms)
+Completed 200 OK in 3011ms (Views: 2987.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 18:21:33 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 18:21:33 +0200
+Started GET "/" for 127.0.0.1 at 2020-02-05 18:44:26 +0200
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (871.7ms)
+  Rendered shared/_nav_bar.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (1.1ms)
+Completed 200 OK in 6458ms (Views: 6263.1ms | ActiveRecord: 102.6ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 18:44:54 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 18:44:56 +0200
+Started GET "/" for 127.0.0.1 at 2020-02-05 18:48:33 +0200
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (394.0ms)
+  Rendered shared/_nav_bar.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 1237ms (Views: 1186.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 18:48:39 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 18:48:40 +0200
+Started GET "/" for 127.0.0.1 at 2020-02-05 19:29:30 +0200
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (440.8ms)
+  Rendered shared/_nav_bar.html.erb (1.0ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 1956ms (Views: 1861.0ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:29:41 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:29:43 +0200
+Started GET "/auth/facebook/callback?code=AQCWSChTKiuQjZo77C56o-eho90hsksLfTOpu4Yc5glqM8JMg-6kqzUw7YVBw1T0J6VmWBS3Vh36KKZ_cJCH7kOyRdD1xiQjcnUM-E-4kLUutxPcUtIVnZ3uZw7CafnEARxWRFU83QjgG4LjmpaDGal7QZ9rymg04OxLwGofLhRVHpQhxjgDldzbY1tjEcG877tphzhXjMohMe3olzhvz6qN5HtQj2UGgRHTry_iYIEVvVFVimr1joB7QHD1nTBciPgJIWJUYHCR4LiC8u3rmizFab0FYEESQQGZwxNDd_CwxNMcB-5vZb2yWTZVLskyaz1uBRilC4ns1z3UY4HuerVc&state=821b93f31a4e39ba0111b4b0b7e3e251d294533508390743" for 127.0.0.1 at 2020-02-05 19:30:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/auth/facebook/callback"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/auth/facebook/callback?code=AQCWSChTKiuQjZo77C56o-eho90hsksLfTOpu4Yc5glqM8JMg-6kqzUw7YVBw1T0J6VmWBS3Vh36KKZ_cJCH7kOyRdD1xiQjcnUM-E-4kLUutxPcUtIVnZ3uZw7CafnEARxWRFU83QjgG4LjmpaDGal7QZ9rymg04OxLwGofLhRVHpQhxjgDldzbY1tjEcG877tphzhXjMohMe3olzhvz6qN5HtQj2UGgRHTry_iYIEVvVFVimr1joB7QHD1nTBciPgJIWJUYHCR4LiC8u3rmizFab0FYEESQQGZwxNDd_CwxNMcB-5vZb2yWTZVLskyaz1uBRilC4ns1z3UY4HuerVc&state=821b93f31a4e39ba0111b4b0b7e3e251d294533508390743" for 127.0.0.1 at 2020-02-05 19:32:07 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/auth/facebook/callback"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/auth/facebook/callback?code=AQCWSChTKiuQjZo77C56o-eho90hsksLfTOpu4Yc5glqM8JMg-6kqzUw7YVBw1T0J6VmWBS3Vh36KKZ_cJCH7kOyRdD1xiQjcnUM-E-4kLUutxPcUtIVnZ3uZw7CafnEARxWRFU83QjgG4LjmpaDGal7QZ9rymg04OxLwGofLhRVHpQhxjgDldzbY1tjEcG877tphzhXjMohMe3olzhvz6qN5HtQj2UGgRHTry_iYIEVvVFVimr1joB7QHD1nTBciPgJIWJUYHCR4LiC8u3rmizFab0FYEESQQGZwxNDd_CwxNMcB-5vZb2yWTZVLskyaz1uBRilC4ns1z3UY4HuerVc&state=821b93f31a4e39ba0111b4b0b7e3e251d294533508390743" for 127.0.0.1 at 2020-02-05 19:32:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/auth/facebook/callback"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/auth/facebook/callback?code=AQCWSChTKiuQjZo77C56o-eho90hsksLfTOpu4Yc5glqM8JMg-6kqzUw7YVBw1T0J6VmWBS3Vh36KKZ_cJCH7kOyRdD1xiQjcnUM-E-4kLUutxPcUtIVnZ3uZw7CafnEARxWRFU83QjgG4LjmpaDGal7QZ9rymg04OxLwGofLhRVHpQhxjgDldzbY1tjEcG877tphzhXjMohMe3olzhvz6qN5HtQj2UGgRHTry_iYIEVvVFVimr1joB7QHD1nTBciPgJIWJUYHCR4LiC8u3rmizFab0FYEESQQGZwxNDd_CwxNMcB-5vZb2yWTZVLskyaz1uBRilC4ns1z3UY4HuerVc&state=821b93f31a4e39ba0111b4b0b7e3e251d294533508390743" for 127.0.0.1 at 2020-02-05 19:32:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/auth/facebook/callback"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-02-05 19:35:51 +0200
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (371.5ms)
+  Rendered shared/_nav_bar.html.erb (2.3ms)
+  Rendered shared/_flash.html.erb (1.0ms)
+Completed 200 OK in 1112ms (Views: 1068.0ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:35:55 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:35:56 +0200
+Started GET "/users/auth/facebook/callback?code=AQDWETNNmSUhUxe1XoNh8uRc4f_CDxM5OdYUfaR7ZRLnbPK04REBeI3fEDbCjWeuYTRbgoaA8FUSkt2hBB0be1oNjjNqdUjnhtRCBJ7kklxohtSP4dhXfp7TC_oqXQ8KpWYA2Gzr8zbAqWMgkFaHdPGdfj9hDdUBCJGSQpFtuLZp8ciB_nGIuPtGtdCZjncvq1Z8-YFqWQ7I123yrk_dLF60G4Zs8AmUjrpXQrmtPGXZiZqnQpJOpdMuf6vimSc2nCU5IBQXPkABJBcZL-1SlqM_XP9Vn3kStl0zzL-wvPApyxERzxygTPA4w6X4wHzj74q0guiE3MrBllgzTSO_Q-zi&state=5cabf455e68443a4aa7eecf230a342c2be26e1eff6d711ce" for 127.0.0.1 at 2020-02-05 19:35:58 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDWETNNmSUhUxe1XoNh8uRc4f_CDxM5OdYUfaR7ZRLnbPK04REBeI3fEDbCjWeuYTRbgoaA8FUSkt2hBB0be1oNjjNqdUjnhtRCBJ7kklxohtSP4dhXfp7TC_oqXQ8KpWYA2Gzr8zbAqWMgkFaHdPGdfj9hDdUBCJGSQpFtuLZp8ciB_nGIuPtGtdCZjncvq1Z8-YFqWQ7I123yrk_dLF60G4Zs8AmUjrpXQrmtPGXZiZqnQpJOpdMuf6vimSc2nCU5IBQXPkABJBcZL-1SlqM_XP9Vn3kStl0zzL-wvPApyxERzxygTPA4w6X4wHzj74q0guiE3MrBllgzTSO_Q-zi", "state"=>"5cabf455e68443a4aa7eecf230a342c2be26e1eff6d711ce"}
+  [1m[36mUser Load (101.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "1318998018290086"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 400ms (ActiveRecord: 103.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-02-05 19:36:02 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (175.2ms)
+  Rendered shared/_nav_bar.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 228ms (Views: 226.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:36:09 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:36:09 +0200
+Started GET "/users/auth/facebook/callback?code=AQDsC8obkqPg5MluiAom-RVis4rFJ84w5yIMRqM2sKtNYMOBHVTzA9RMDV5AVcTTB5459UBKJIl5hlwNht0cJi0RT9H1UyvnrThj1IXV2jefymxFXgmGE38KLGycCoexNj_8P9PutuzCLZiU3Mv9AXqRq7phuM9KpgkvS03rqVrbeWyQrvGGKgrhjAO1W5itR_gZeG2upC03lLbyiD8bbV5u99CfLz5jPGnfn5INQ10h7zQoDs018THvUXmmefNnwwMO9_DaMBkrMX3ToS3bpKSpWEhBn5MBq05EuaAr00CZRfAuu2kBIPRB2FL0KybB5S9Be-kRPsydk0iMhBjYYIj1&state=8f0314580b99792a3dbb46d5e7b3b2c0a1118d8b9fb9c218" for 127.0.0.1 at 2020-02-05 19:36:10 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDsC8obkqPg5MluiAom-RVis4rFJ84w5yIMRqM2sKtNYMOBHVTzA9RMDV5AVcTTB5459UBKJIl5hlwNht0cJi0RT9H1UyvnrThj1IXV2jefymxFXgmGE38KLGycCoexNj_8P9PutuzCLZiU3Mv9AXqRq7phuM9KpgkvS03rqVrbeWyQrvGGKgrhjAO1W5itR_gZeG2upC03lLbyiD8bbV5u99CfLz5jPGnfn5INQ10h7zQoDs018THvUXmmefNnwwMO9_DaMBkrMX3ToS3bpKSpWEhBn5MBq05EuaAr00CZRfAuu2kBIPRB2FL0KybB5S9Be-kRPsydk0iMhBjYYIj1", "state"=>"8f0314580b99792a3dbb46d5e7b3b2c0a1118d8b9fb9c218"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "1318998018290086"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 237ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-02-05 19:36:11 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.1ms)
+  Rendered shared/_nav_bar.html.erb (2.1ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 124ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/cancel" for 127.0.0.1 at 2020-02-05 19:36:22 +0200
+Processing by Devise::RegistrationsController#cancel as HTML
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-02-05 19:36:22 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.1ms)
+  Rendered shared/_nav_bar.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 66ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:36:26 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:36:26 +0200
+Started GET "/users/auth/facebook/callback?code=AQAc0LbAswFC14jR2kxYBc9cpsEOyZYeNbLDOIXC70PSCt1hQJljxlwrHXRsQ1yUAeYpkfHHiDBRsia5531isFYnVIHOwcHmbBOmiphItuKRZySNZ2jLlbCKhmIOt_dz56_DnHcv-oR1ysBRo93RCPKyJq42nLV7pQ9JkPlPdqZ1bVXKuxggBaSAkVzn0qQ0hStWMAdl2SilDApwMKXv5m0Dgb36E_d0fSO5wzDuptkEVy9a1dG8CNwGyInOrt1kG4tMnULyng9O8BSTONTTMXcJN4Yd11ifqmTg5u5LhESZjHtDFmSTZsTmLw4q_HEVfvg5uQwbZe5clsl4A-EqH3aI&state=5a4970a0d8469e70a0b024645b7cdbf32969e3cd0da7920d" for 127.0.0.1 at 2020-02-05 19:36:27 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAc0LbAswFC14jR2kxYBc9cpsEOyZYeNbLDOIXC70PSCt1hQJljxlwrHXRsQ1yUAeYpkfHHiDBRsia5531isFYnVIHOwcHmbBOmiphItuKRZySNZ2jLlbCKhmIOt_dz56_DnHcv-oR1ysBRo93RCPKyJq42nLV7pQ9JkPlPdqZ1bVXKuxggBaSAkVzn0qQ0hStWMAdl2SilDApwMKXv5m0Dgb36E_d0fSO5wzDuptkEVy9a1dG8CNwGyInOrt1kG4tMnULyng9O8BSTONTTMXcJN4Yd11ifqmTg5u5LhESZjHtDFmSTZsTmLw4q_HEVfvg5uQwbZe5clsl4A-EqH3aI", "state"=>"5a4970a0d8469e70a0b024645b7cdbf32969e3cd0da7920d"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "1318998018290086"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 250ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-02-05 19:36:28 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.4ms)
+  Rendered shared/_nav_bar.html.erb (2.0ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 120ms (Views: 118.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-05 19:40:14 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (53.2ms)
+  Rendered shared/_nav_bar.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 124ms (Views: 121.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:40:18 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-02-05 19:40:18 +0200
+Started GET "/users/auth/facebook/callback?code=AQCEqznEZ-FcGRUI8pMMiCtza537PeJcwDwCngICiMbUgaxHe8jtt1kvXBwdlz-95ADN0J_BCy9BHEoPyuoptHZLXVHAI7c6RS_XhsOAdQUh4T961VMaxObs_DVukaw-oYdOGFNSpZhHP3WskVAM54egcyK_lhfhoP_Srmuq90fCHmQTr2NnK7H-L-cAiriWEtA1tpXt9x6OiEEG8MjBnoZxa8khbykyuciXpiKKgD770M55LlKeNb6z8uZfJi_YEhNLr6Kb_Kk_ESLaGbUmWOKHJc3g6QUmuohYZpmWjKnFf__KCwhIgGB8FAMMgBlRlzE&state=b469133db20722bdfc5efe23c2e57746b0ee8801dd6906e7" for 127.0.0.1 at 2020-02-05 19:40:35 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCEqznEZ-FcGRUI8pMMiCtza537PeJcwDwCngICiMbUgaxHe8jtt1kvXBwdlz-95ADN0J_BCy9BHEoPyuoptHZLXVHAI7c6RS_XhsOAdQUh4T961VMaxObs_DVukaw-oYdOGFNSpZhHP3WskVAM54egcyK_lhfhoP_Srmuq90fCHmQTr2NnK7H-L-cAiriWEtA1tpXt9x6OiEEG8MjBnoZxa8khbykyuciXpiKKgD770M55LlKeNb6z8uZfJi_YEhNLr6Kb_Kk_ESLaGbUmWOKHJc3g6QUmuohYZpmWjKnFf__KCwhIgGB8FAMMgBlRlzE", "state"=>"b469133db20722bdfc5efe23c2e57746b0ee8801dd6906e7"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "1318998018290086"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 229ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-02-05 19:40:37 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.2ms)
+  Rendered shared/_nav_bar.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
