@@ -1,0 +1,25 @@
+<div class="container-fluid posts">
+<div class="row">
+<div class="col-3 ">
+<%= render  "shared/new_post" %>
+</div>
+<div class="col-5 post-list">
+<div class="count text-center"> Recent posts <%=@posts.count%></div>
+<%@posts.each do |post|%>
+<div class="post specific">
+<p class="creator text-left"> Posted by <%= gravatar_for post.creator%> <%=post.creator.user_name%></p>
+<p class="cont"><%=post.content%></p>
+<div class="like-comment">
+<div class="like-count"><%= render partial: 'shared/like', locals: {post: post}%></div>
+<div class="comment-count"><%= image_tag  "icons8-comments-20.png" %> <span> <%=post.comments.count%></span> </div>
+</div>
+<%= render partial: 'shared/comment', locals: {post: post}%>
+<h5>Latest Comments</h5>
+<p>
+<%= render partial: 'shared/post_comments', collection: post.comments.recent_comments, as: :comment%>
+</p> 
+</div>
+<%end%>
+</div>
+</div>
+</div>

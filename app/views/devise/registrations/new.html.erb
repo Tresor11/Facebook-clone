@@ -1,0 +1,61 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-6 m-auto">
+<div class="signup-form">
+  <h2>Join facebook </h2>
+  <h6>It's quick and easy.</h6>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <%= f.text_field :first_name, class: "form-control", placeholder: 'First Name' %> 
+      </div>
+      <div class="form-group col-md-4">
+        <%= f.text_field :last_name, class: "form-control", placeholder: 'last name' %> 
+      </div>
+      <div class="form-group col-md-4">
+        <%= f.text_field :user_name, class: "form-control", placeholder: 'user name' %> 
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email Address', class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm Password', class: "form-control" %>
+    </div>
+
+    <fieldset class="form-group">
+      <legend class="col-form-label">Gender</legend>
+      <div class="radio-gender">
+        <div class="form-check">
+          <%= f.radio_button :gender, "female", class: "form-check-input" %>
+          <%= f.label :gender_female, "Female" , class: "form-check-label" %>
+        </div>
+        <div class="form-check male">
+          <%= f.radio_button :gender, "male", class: "form-check-input" %>
+          <%= f.label :gender_male, "Male" , class: "form-check-label" %>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <%= f.submit "Sign up", class: 'btn btn-success signup-button' %> <span> have an acount?<span>
+      <%= link_to  "Login",new_user_session_path,class: "btn btn-primary"%>
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>
+      <%= link_to "Cancel Facebook sign up", cancel_user_registration_path %>
+    </div>
+  <% end %>
+</div>
+</div>
+</div>
+</div>

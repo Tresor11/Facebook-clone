@@ -1,0 +1,171 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+.container-fluid{
+  margin-top: 3vh;
+}
+
+body{
+  background-color: rgb(196, 191, 191);
+}
+
+.post{
+  margin-bottom: 5px;
+  background-color: white;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 5px;
+  -webkit-box-shadow: 7px 10px 18px 0px rgba(189,170,189,0.6);
+-moz-box-shadow: 7px 10px 18px 0px rgba(189,170,189,0.6);
+box-shadow: 7px 10px 18px 0px rgba(189,170,189,0.6);
+  display: flex;
+  .cont{
+    border-bottom: 1px solid grey;
+  }
+  form{
+    display: flex;
+    width: 50%;
+  }
+  textarea{
+    background-color: rgb(228, 228, 228);
+  }
+  p{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 21px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    color: rgb(70, 70, 70);
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    }
+}
+
+.img-tag{
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.creator{
+  height: 40px;
+  border-bottom: 1px solid grey;
+  img{
+    height: 30px;
+    width: 30px;
+  }
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.gravatar{
+  border-radius: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-primar{
+  background: rgb(96,80,182);
+  background: linear-gradient(90deg, rgba(96,80,182,0.9359943806624212) 0%, rgba(82,69,170,1) 0%, rgba(142,43,171,1) 0%, rgba(70,51,164,1) 96%);
+  font-family: bold;
+  color: white;
+}
+
+.btn-like{
+  background: rgb(222, 222, 223);
+  border-radius: 100%;
+}
+
+
+.profile{
+  border: 1px solid rgb(168, 168, 168);
+  background: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 7px 10px 18px 0px rgba(189,170,189,0.6);
+-moz-box-shadow: 7px 10px 18px 0px rgba(189,170,189,0.6);
+box-shadow: 7px 10px 18px 0px rgba(189,170,189,0.6);
+  display: flex;
+  justify-content: space-around;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+}
+
+.count{
+  background: rgb(96,80,182);
+background: linear-gradient(90deg, rgba(96,80,182,0.9359943806624212) 0%, rgba(82,69,170,1) 0%, rgba(142,43,171,1) 0%, rgba(70,51,164,1) 96%);
+  border-radius: 5px;
+  font-family: Georgia, serif;
+font-size: 26px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #FFFFFF;
+font-weight: 700;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 1vh;
+}
+
+.specific{
+  display: flex;
+  flex-direction: column;
+}
+
+.post_comment {
+  p{
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    background: rgb(255, 252, 246);
+    border: 1px solid grey;
+  }
+  span{
+    color:blueviolet;
+  }
+}
+
+.like-comment{
+  display: flex;
+  justify-content: baseline;
+  justify-content: space-around;
+  img{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.like-count{
+  width: 15%;
+  display: flex;
+  justify-content: baseline;
+  form{
+    width: 80%;
+  }
+}
+
+.comment-count{
+  width: 15%;
+  justify-content: baseline;
+  background: rgb(222, 222, 223);
+  border-radius: 100%;
+  display: flex;
+  justify-content: baseline;
+  span{
+    margin-top: 5px;
+    margin-left: 2px;
+  }
+}
