@@ -28,7 +28,7 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
-      user.first_name = auth.info.name 
+      user.first_name = auth.info.name
     end
   end
 
@@ -65,13 +65,8 @@ class User < ApplicationRecord
   end
 
   def accept_request(user)
-    Request.all.map do |x|
-      if (x.friend_pair == "#{user.id},#{id}") || (x.friend_pair == "#{id},#{user.id}")
-        return false
-      end
-    end
-    friendship.friend_pair = "#{id},#{user.id}"
     friendship = receved_requests.find { |f| f.sender == user }
+    friendship.friend_pair = "#{id},#{user.id}"
     friendship.status = true
     friends << friendship
     friendship.save
