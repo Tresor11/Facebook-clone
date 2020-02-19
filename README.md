@@ -1,4 +1,4 @@
-# Project Name
+# Facebook Clone
 
 > This repo contains a facebook-like appliction built mainly with ruby in rails.
 
@@ -10,39 +10,29 @@ The application provide the ability to add a post,comment a post,like a post,sen
 
 - ruby on rails,
 - ruby,
-- boostrap
+- boostrap,
+- postgres
 
 ## Live Demo
 
-[Live Demo](https://sleepy-badlands-59290.herokuapp.com)
+[Facebook Clone Live Demo](https://sleepy-badlands-59290.herokuapp.com)
 
 
 ## Getting Started
-
-**These are the steps to get you up and running with this project on your local cmputer**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-  You should make sure you have ruby and rails installed on your local computer
+  1. You should make sure you have ruby and rails installed on your local computer
+  2. For facebook login, change the API key and secret in ``` config/intializers.devise.rb ``` if you plan on using your own instance of facebook login
 ### Setup
-  clone this repo by typing 
-  `git clone Facebook-clone
-  `
-  in your terminal
-### Install
-get the gems used by typing
-`
-bundle istall
-`
+  1. Clone the repo ``` git clone https://github.com/Tresor11/Facebook-clone.git  ```
+2. Install dependencies ``` bundle install ```
 
-create the database by typing
-`rais db:create
-`
-run the migrations by typing
-`rails db:migrate
-`
+### Install
+1. Create the database by typing ``` rails db:create ```
+2. Run the migration ``` rails db:migrate ```
 
 ### Usage
 open your local server by typing
@@ -50,8 +40,8 @@ open your local server by typing
 `
 then login in the app and explore the features
 
-### Run tests
-to run the rest type
+### Testing
+To run the rest type
 `rspec
 `
 in your terminal
@@ -59,17 +49,18 @@ in your terminal
 
 ## Authors
 
-👤 **Tresor**
+👤 **Tresor Bireke**
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@Tresor11](https://github.com/Tresor11)
+- Twitter: [@TBireke](https://twitter.com/TBireke)
+- Linkedin: [Tresor Bireke Muhigirwa](https://www.linkedin.com/in/tr%C3%A9sor-bireke-3b7443188/
+)
 
-👤 **Ahmed**
+👤 **Sharmarke Ahmed**
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@mrnadaara](https://github.com/mrnadaara)
+- Twitter: [@SomalianLegend](https://twitter.com/SomalianLegend)
+- Linkedin: [Sharmarke Ahmed](https://www.linkedin.com/in/sharmarke-ahmed/)
 
 ## 🤝 Contributing
 
