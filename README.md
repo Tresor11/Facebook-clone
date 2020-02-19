@@ -1,10 +1,10 @@
 # Project Name
 
-> One paragraph statement about the project.
+> This repo contains a facebook-like appliction built mainly with ruby in rails.
 
 ![screenshot](./shoot.png)
 
-Additional description about the project and its features.
+The application provide the ability to add a post,comment a post,like a post,send and receive friend requests
 
 ## Built With
 
@@ -14,29 +14,47 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://sleepy-badlands-59290.herokuapp.com)
+[Live Demo](https://sleepy-badlands-59290.herokuapp.com)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**These are the steps to get you up and running with this project on your local cmputer**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
+  You should make sure you have ruby and rails installed on your local computer
 ### Setup
-
+  clone this repo by typing 
+  `git clone Facebook-clone
+  `
+  in your terminal
 ### Install
+get the gems used by typing
+`
+bundle istall
+`
+
+create the database by typing
+`rais db:create
+`
+run the migrations by typing
+`rails db:migrate
+`
 
 ### Usage
+open your local server by typing
+`rails s
+`
+then login in the app and explore the features
 
 ### Run tests
-
-### Deployment
-
+to run the rest type
+`rspec
+`
+in your terminal
 
 
 ## Authors
