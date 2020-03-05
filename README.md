@@ -59,7 +59,7 @@ in your terminal
 👤 **Sharmarke Ahmed**
 
 - Github: [@mrnadaara](https://github.com/mrnadaara)
-- Twitter: [@SomalianLegend](https://twitter.com/SomalianLegend)
+- Twitter: [@mrnadaara](https://twitter.com/mrnadaara)
 - Linkedin: [Sharmarke Ahmed](https://www.linkedin.com/in/sharmarke-ahmed/)
 
 ## 🤝 Contributing
