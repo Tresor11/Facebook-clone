@@ -8,7 +8,8 @@
 }
 
 body{
-  background-color: rgb(196, 191, 191);
+  background-color: rgb(221, 221, 221);
+  overflow-x: hidden;
 }
 
 .post{
@@ -168,4 +169,29 @@ text-transform: none;
     margin-top: 5px;
     margin-left: 2px;
   }
+}
+
+
+#signin{
+  height: 100vh;
+  width: 100vw;
+  background-image: image-url('undraw_remotely_2j6y.svg'); 
+  background-repeat: no-repeat;
+}
+
+#form-div{
+  form{
+    width: 50%;
+    margin: auto;
+    border-radius: 5%;
+    padding: 10px;
+    background-color: rgb(226, 226, 226);
+    -webkit-box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.75);
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    -ms-border-radius: 5%;
+    -o-border-radius: 5%;
+}
 }

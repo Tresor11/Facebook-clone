@@ -1,30 +1,35 @@
-<div class="container-fluid">
+<div class="container-fluid" id="signin">
   <div class="row">
-  <div class="col-6 m-auto">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="col-8 ml-auto mt-4" id="form-div">
+    <h3 class="text-center font-weight-bold">Sign in</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
+  <div class="field col-9 m-auto">
+    <%= f.label :email,class:"font-weight-bold" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"border-0 rounded-pill text-center col-12 py-1" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="field col-9 m-auto py-2">
+    <%= f.label :password,class:"font-weight-bold" %><br />
+    <%= f.password_field :password, autocomplete: "current-password",class:"border-0 rounded-pill text-center col-12 py-1"  %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="field m-auto">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me,class:"font-weight-bold" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in",class: "btn btn-success" %><span> dont have an acount?<span>
-      <%= link_to  "Signup",new_user_registration_path,class: "btn btn-primary"%>
-      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>
+  <div class="actions col-9 d-flex flex-column m-auto">
+    <%= f.submit "Log in",class: "font-weight-bold btn btn-outline-success col-6 m-auto rounded-pill" %>
+    <h6 class="text-center font-weight-bold">Or</h6>
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "font-weight-bold btn btn-outline-primary m-auto rounded-pill" %>
   </div>
 <% end %>
+<div class="m-auto py-4 col-6 d-flex justify-content-center flex-column">
+  <h6 class="text-center font-weight-bold">New User?</h6>
+  <%= link_to  "SignUp Here",new_user_registration_path,class: "font-weight-bold btn btn-primary col-8 m-auto rounded-pill"%>
+</div>
   </div>
 </div>
 </div>
