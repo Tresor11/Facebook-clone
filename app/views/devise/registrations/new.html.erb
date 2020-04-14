@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
 <div class="row">
 <div class="col-6 m-auto">
 <div class="signup-form">
@@ -37,7 +37,7 @@
 
     <fieldset class="form-group">
       <legend class="col-form-label">Gender</legend>
-      <div class="radio-gender">
+      <div class="radio-gender  d-flex justify-content-around">
         <div class="form-check">
           <%= f.radio_button :gender, "female", class: "form-check-input" %>
           <%= f.label :gender_female, "Female" , class: "form-check-label" %>
@@ -57,5 +57,70 @@
   <% end %>
 </div>
 </div>
+</div>
+</div> -->
+
+<div class="container-fluid" id="signup">
+  <div class="row">
+    <div class="col-4">
+      <h1 class="text-center mt-4 font-weight-bold">Share Your thoughts and Make new Friends <br> <samp class="mic-t"> rails-tic</samp></h1>
+    </div>
+  <div class="col-8 ml-auto " id="form-div">
+    <h3 class="text-center font-weight-bold">SignUp</h3>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name))  do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field col-9 m-auto">
+    <%= f.label :first_name,class:"font-weight-bold" %><br />
+    <%= f.text_field :first_name, autocomplete: "email",class:"border-0 rounded-pill text-center col-12 py-1" %>
+  </div>
+
+  <div class="field col-9 m-auto">
+    <%= f.label :last_name,class:"font-weight-bold" %><br />
+    <%= f.text_field :last_name, autocomplete: "email",class:"border-0 rounded-pill text-center col-12 py-1" %>
+  </div>
+
+  <div class="field col-9 m-auto">
+    <%= f.label :user_name,class:"font-weight-bold" %><br />
+    <%= f.text_field :user_name, autocomplete: "email",class:"border-0 rounded-pill text-center col-12 py-1" %>
+  </div>
+
+  <div class="field col-9 m-auto">
+    <%= f.label :email,class:"font-weight-bold" %><br />
+    <%= f.email_field :email, autocomplete: "email",class:"border-0 rounded-pill text-center col-12 py-1" %>
+  </div>
+
+  <div class="field col-9 m-auto">
+    <%= f.label :password,class:"font-weight-bold" %><% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "email",class:"border-0 rounded-pill text-center col-12 py-1" %>
+  </div>
+
+  <div class="field col-9 m-auto py-1">
+    <%= f.label :password_confirmation,class:"font-weight-bold" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "current-password",class:"border-0 rounded-pill text-center col-12 py-1"  %>
+  </div>
+
+  <fieldset class="form-group">
+    <legend class="col-form-label text-center font-weight-bold">Gender</legend>
+    <div class="radio-gender  d-flex justify-content-around col-8 m-auto">
+      <div class="form-check">
+        <%= f.radio_button :gender, "female", class: "form-check-input" %>
+        <%= f.label :gender_female, "Female" , class: "form-check-label" %>
+      </div>
+      <div class="form-check male">
+        <%= f.radio_button :gender, "male", class: "form-check-input" %>
+        <%= f.label :gender_male, "Male" , class: "form-check-label" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="actions col-9 d-flex flex-column m-auto">
+    <%= f.submit "Signup",class: "font-weight-bold btn btn-outline-success col-6 m-auto rounded-pill" %>
+    <h6 class="text-center font-weight-bold">Have an account?</h6>
+      <%= link_to  "Login Here",new_user_session_path,class: "btn btn-primary", class: "font-weight-bold btn btn-outline-primary m-auto rounded-pill" %>
+  </div>
+<% end %>
+  </div>
 </div>
 </div>
