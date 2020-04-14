@@ -41051,3 +41051,21 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 2090ms (Views: 2088.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_in" for ::1 at 2020-04-14 21:20:58 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+  Rendered shared/_nav_bar.html.erb (0.8ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 84ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-14 21:22:25 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.9ms)
+  Rendered shared/_nav_bar.html.erb (0.9ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 123ms (Views: 121.6ms | ActiveRecord: 0.0ms)
+
+
