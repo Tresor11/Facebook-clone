@@ -1,5 +1,8 @@
 <div class="container-fluid" id="signin">
   <div class="row">
+    <div class="col-4">
+      <h1 class="text-center mt-4 font-weight-bold">Welcome back to <samp class="mic-t"> rails-tic</samp></h1>
+    </div>
   <div class="col-8 ml-auto mt-4" id="form-div">
     <h3 class="text-center font-weight-bold">Sign in</h3>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
