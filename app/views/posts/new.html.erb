@@ -1,12 +1,12 @@
-<div class="container-fluid">
+<div class="container-fluid class new_post_div">
   <div class="row">
     <div class="col-4">
       <h1 class="text-center mt-4 font-weight-bold">Welcome back to <samp class="mic-t"> rails-tic</samp></h1>
     </div>
-  <div class="col-8 ml-auto mt-4" id="form-div">
-    <h3 class="text-center font-weight-bold">Create a post</h3>
+  <div class="col-7 ml-auto mt-4 " id="form-div">
+    <h3 class=" font-weight-bold">Create a post</h3>
     <%= form_for(@post)  do |f| %>
-  <div class="field col-9 m-auto">
+  <div class="field col-9  m-auto">
     <%= f.label :content,class:"font-weight-bold" %><br />
     <%= f.text_area :content, autocomplete: "content",class:"border-0 rounded-pill text-center col-12 py-1" %>
   </div>
