@@ -1,25 +1,28 @@
-<div class="container-fluid posts">
-<div class="row">
-<div class="col-3 ">
-<%= render  "shared/new_post" %>
-</div>
-<div class="col-5 post-list">
-<div class="count text-center"> Recent posts <%=@posts.count%></div>
-<%@posts.each do |post|%>
-<div class="post specific">
-<p class="creator text-left"> Posted by <%= gravatar_for post.creator%> <%=post.creator.user_name%></p>
-<p class="cont"><%=post.content%></p>
-<div class="like-comment">
-<div class="like-count"><%= render partial: 'shared/like', locals: {post: post}%></div>
-<div class="comment-count"><%= image_tag  "icons8-comments-20.png" %> <span> <%=post.comments.count%></span> </div>
-</div>
-<%= render partial: 'shared/comment', locals: {post: post}%>
-<h5>Latest Comments</h5>
-<p>
-<%= render partial: 'shared/post_comments', collection: post.comments.recent_comments, as: :comment%>
-</p> 
-</div>
-<%end%>
-</div>
-</div>
+<div class="container-fluid">
+  <div id="new_post">
+  <%=link_to new_post_path do %>
+    <h4 class="text-center">create a new post</h4>
+    <p class="text-center pen"><i class="fas fa-pen fa-4x"></i></p>
+  <%end%>
+  </div>
+    <div class="col-6 m-auto"> <h4 class="text-center">Recent posts <%=@posts.count%></h4></div>
+      <%@posts.each do |post|%>
+      <div class="card bg-light col-5 m-auto mb-4">
+        <div class="card-header"><%= gravatar_for post.creator%> <%=post.creator.user_name%></div>
+        <div class="card-body">
+          <p class="card-text"><%=post.content%></p>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-around">
+          <div class="like-count"><%= render partial: 'shared/like', locals: {post: post}%></div>
+          <%= render partial: 'shared/comment', locals: {post: post}%>
+          </div>
+          <hr>
+          <div class="col-12">
+            <%= render partial: 'shared/post_comments', collection: post.comments.recent_comments, as: :comment%>
+          </div>
+        </div>
+        <br>
+      <%end%>
+  </div>
 </div>

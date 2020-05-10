@@ -1,13 +1,15 @@
-<div class="post specific col-6 m-auto">
-<p class="creator text-left"> Posted by <%= gravatar_for @post.creator%> <%=@post.creator.user_name%></p>
-<p class="cont"><%=@post.content%></p>
-<div class="like-comment">
-<div class="like-count"><%= render partial: 'shared/like_count'%></div>
-<div class="comment-count"><%= image_tag  "icons8-comments-20.png" %> <span> <%=@post.comments.count%></span> </div>
-</div>
- <%= render partial: 'shared/comment_count'%>
-<h4>Comments</h4>
-<p>
-<%= render partial: 'shared/post_comments', collection: @post.comments.recent_comments, as: :comment%>
-</p> 
-</div>
+<div class="card bg-light  col-6 m-auto mt-4">
+  <div class="card-header"><%= gravatar_for @post.creator%> <%=@post.creator.user_name%></div>
+  <div class="card-body">
+    <p class="card-text"><%=@post.content%></p>
+  </div>
+  <hr>
+  <div class="d-flex justify-content-around">
+    <div class="like-count"><%= render partial: 'shared/like', locals: {post: @post}%></div>
+    <%= render partial: 'shared/comment', locals: {post: @post}%>
+    </div>
+    <hr>
+    <div class="col-12">
+      <%= render partial: 'shared/post_comments', collection: @post.comments.recent_comments, as: :comment%>
+    </div>
+  </div>

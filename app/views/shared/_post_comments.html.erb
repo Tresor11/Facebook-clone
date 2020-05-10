@@ -1,6 +1,8 @@
-<div class="post_comment">
-  <p>
-  <span><%= comment.commenter.user_name%></span> said: 
-   <%= comment.comment_content%>
+  <p class="comment d-flex">
+  <%= gravatar_for comment.commenter%>
+  <span class="ml-2">
+    <span class="text-secondary"> <%= comment.commenter.user_name%>  </span> <br> 
+    <%=comment.comment_content%>
+  </span>
+  <hr>
   </p>
-</div>

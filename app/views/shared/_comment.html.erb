@@ -1,7 +1,8 @@
 <%= form_for [post, @comment] do |f| %>
-<%= f.label 'Make a comment' %>
-<%= f.text_area :comment_content%>
+<div class="col-12 d-flex">
+<%= f.text_field :comment_content, placeholder:"write a comment",class:"col-9"%>
 <%= f.hidden_field :post_id, value: post.id %>
 <%= f.hidden_field :commenter_id, value: current_user.id %>
-<%= f.submit "comment",class:"btn btn-primar"%>
+<%= f.submit "#{post.comments.count} comments",class:"btn btn-primar ml-1 rounded-pill"%>
+</div>
 <% end %>

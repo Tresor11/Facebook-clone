@@ -1,6 +1,16 @@
 <% if notice %>
-<p id="alert" class="alert alert-success"><%= notice %></p>
+<div class="alert alert-success col-6 m-auto text-center alert-dismissible fade show" role="alert">
+  <strong>Hi there</strong> <%=notice%>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <% end %>
 <% if alert %>
-<p id="alert" class="alert alert-danger"><%= alert %></p>
+<div class="alert alert-danger col-6 m-auto text-center alert-dismissible fade show" role="alert">
+  <strong>OOps!!</strong> <%=alert%>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <% end %>
