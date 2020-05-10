@@ -41069,3 +41069,84 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 123ms (Views: 121.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-05-08 23:46:02 +0200
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (12.9ms)
+  Rendered shared/_nav_bar.html.erb (0.6ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+Completed 200 OK in 2553ms (Views: 2521.6ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 09:11:09 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (39.6ms)
+  Rendered shared/_nav_bar.html.erb (0.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 2507ms (Views: 2469.0ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-10 09:14:12 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pyPpYCntd7EFY+jED2TbolD02jVlBJ4FLRsGgqfZ2X1jYWeeWHBy5KN5qMSdBXiIpQKwsQNeG1bfBrFCWYmbrg==", "user"=>{"email"=>"tresor.moise2001@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tresor.moise2001@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/tresor/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 166ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 09:14:12 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5
+  [1m[36mRequest Load (1.8ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."sender_id" = $1[0m  [["sender_id", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."recever_id" = $1[0m  [["recever_id", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mPost Load (2.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (creator_id IN (NULL) OR creator_id = 1) ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/models/user.rb:93
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_new_post.html.erb (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/shared/_like.html.erb:4
+  Rendered shared/_like.html.erb (7.1ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered shared/_comment.html.erb (1.6ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:19
+  Rendered collection of shared/_post_comments.html.erb [0 times] (0.0ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:10
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/shared/_like.html.erb:4
+  Rendered shared/_like.html.erb (5.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered shared/_comment.html.erb (1.5ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_post_comments.html.erb:3
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_post_comments.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_post_comments.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_post_comments.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_post_comments.html.erb:3
+  Rendered collection of shared/_post_comments.html.erb [5 times] (8.6ms)
+  Rendered posts/index.html.erb within layouts/application (49.4ms)
+  Rendered shared/_nav_bar.html.erb (2.4ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 197ms (Views: 86.1ms | ActiveRecord: 26.6ms)
+
+
