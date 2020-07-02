@@ -6,6 +6,10 @@
 
 The application provide the ability to add a post,comment a post,like a post,send and receive friend requests
 
+### Future features
+- make the app responsive for mobile devices
+- allow the user to upload a profile picture
+
 ## Built With
 
 - ruby on rails,
