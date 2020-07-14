@@ -1,10 +1,10 @@
 # Facebook Clone
 
-> This repo contains a facebook-like appliction built mainly with ruby in rails.
+> This repo contains a Facebook-like appliction built with Ruby on Rails.
 
 ![screenshot](./shoot.png)
 
-The application provide the ability to add a post,comment a post,like a post,send and receive friend requests
+The application allows users to add a post, comment a post, like a post; send and receive friend requests; edit and delete a post.
 
 ### Future features
 - make the app responsive for mobile devices
@@ -12,10 +12,10 @@ The application provide the ability to add a post,comment a post,like a post,sen
 
 ## Built With
 
-- ruby on rails,
-- ruby,
-- boostrap,
-- postgres
+- Ruby on Rails
+- Ruby
+- Boostrap
+- Postgres
 
 ## Live Demo
 
@@ -30,16 +30,17 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
   1. You should make sure you have ruby and rails installed on your local computer
   2. For facebook login, change the API key and secret in ``` config/intializers.devise.rb ``` if you plan on using your own instance of facebook login
+  
 ### Setup
   1. Clone the repo ``` git clone https://github.com/Tresor11/Facebook-clone.git  ```
-2. Install dependencies ``` bundle install ```
-
+  
 ### Install
-1. Create the database by typing ``` rails db:create ```
-2. Run the migration ``` rails db:migrate ```
+1. Install dependencies ``` bundle install ```
+2. Create the database by typing ``` rails db:create ```
+3. Run the migration ``` rails db:migrate ```
 
 ### Usage
-open your local server by typing
+run your local server by typing
 `rails s
 `
 then login in the app and explore the features
